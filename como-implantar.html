@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Saiba como implantar a Gestão por Competências na sua organização. Conheça as fases de mapeamento e identificação de lacunas de competências.">
+    <meta name="keywords" content="gestão por competências, mapeamento de competências, lacunas de competências, desenvolvimento de pessoas, plano de capacitação">
+    <title>Como Implantar a Gestão por Competências - Lidere</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#131524',
+                        cardBg: '#1E2138',
+                        cardBgLight: '#2A2E4C',
+                        accent: '#05D9A6',
+                        accentHover: '#04B88C',
+                        textLight: '#E2E8F0',
+                        textMuted: '#94A3B8'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #131524;
+            color: #E2E8F0;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #ffffff, #05D9A6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .card-hover:hover {
+            border-color: #05D9A6;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(5, 217, 166, 0.2);
+        }
+
+        .wa-float {
+            animation: pulse-wa 2s infinite;
+        }
+        @keyframes pulse-wa {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .timeline-line {
+            position: relative;
+        }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 27px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #05D9A6, #131524);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-darkBg">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-darkBg/90 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 lg:px-20 py-4">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-cardBg rounded flex items-center justify-center border border-accent/30">
+                    <i class="fa-solid fa-chart-line text-accent text-xl"></i>
+                </div>
+                <span class="text-2xl font-bold tracking-tight text-white">Lidere<span class="text-accent text-3xl leading-none">↗</span></span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-sm font-medium hover:text-accent transition-colors">
+                    <i class="fa-solid fa-arrow-left mr-1"></i> Página Inicial
+                </a>
+                <a href="#fase1" class="text-sm font-medium hover:text-accent transition-colors">Fase 1</a>
+                <a href="#fase2" class="text-sm font-medium hover:text-accent transition-colors">Fase 2</a>
+                <a href="#entregas" class="text-sm font-medium hover:text-accent transition-colors">Entregas</a>
+                <a href="index.html#contato" class="bg-accent hover:bg-accentHover text-darkBg font-bold py-2 px-5 rounded-full text-sm transition-all">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 px-6 overflow-hidden">
+        <div class="absolute top-[-10%] right-[-10%] w-96 h-96 bg-accent opacity-10 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-[-10%] left-[-5%] w-72 h-72 bg-accent opacity-5 rounded-full blur-[80px]"></div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <a href="index.html" class="inline-flex items-center gap-2 text-textMuted hover:text-accent transition-colors text-sm mb-8">
+                <i class="fa-solid fa-arrow-left"></i> Voltar para a página inicial
+            </a>
+            <span class="text-accent font-semibold tracking-wider text-sm uppercase mb-4 block">Processo de Implantação</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                Como implantar a <span class="gradient-text">Gestão por Competências</span>
+            </h1>
+            <p class="text-lg md:text-xl text-textMuted mb-10 leading-relaxed max-w-3xl mx-auto">
+                O processo envolve duas fases principais: <strong class="text-white">mapeamento das competências essenciais</strong> e <strong class="text-white">identificação das lacunas de competências</strong> dos colaboradores. O resultado é um plano de desenvolvimento personalizado para fechar essas lacunas.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#fase1" class="inline-flex items-center gap-2 bg-accent hover:bg-accentHover text-darkBg font-bold py-4 px-8 rounded-full transition-all shadow-[0_0_20px_rgba(5,217,166,0.3)]">
+                    <i class="fa-solid fa-map"></i> Fase 1: Mapeamento
+                </a>
+                <a href="#fase2" class="inline-flex items-center gap-2 bg-cardBg hover:bg-cardBgLight text-white font-bold py-4 px-8 rounded-full border border-white/10 hover:border-accent/30 transition-all">
+                    <i class="fa-solid fa-magnifying-glass-chart"></i> Fase 2: Lacunas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visão Geral das Fases -->
+    <section class="py-16 px-6 bg-cardBg/50 border-y border-white/5">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-cardBg p-8 rounded-2xl border border-accent/20 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-accent/30"></div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-accent/15 rounded-xl flex items-center justify-center">
+                            <span class="text-accent font-extrabold text-xl">1</span>
+                        </div>
+                        <div>
+                            <span class="text-accent text-xs font-semibold uppercase tracking-wider">Fase 1</span>
+                            <h3 class="text-xl font-bold text-white">Mapear as Competências</h3>
+                        </div>
+                    </div>
+                    <p class="text-textMuted leading-relaxed">Mapeamento de todas as competências essenciais de cada unidade organizacional, categorizadas e alinhadas aos objetivos estratégicos.</p>
+                    <div class="mt-4 flex items-center gap-2 text-sm text-accent">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>4 etapas &middot; 3 a 6 meses</span>
+                    </div>
+                </div>
+                <div class="bg-cardBg p-8 rounded-2xl border border-white/10 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cardBgLight to-accent/20"></div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-accent/15 rounded-xl flex items-center justify-center">
+                            <span class="text-accent font-extrabold text-xl">2</span>
+                        </div>
+                        <div>
+                            <span class="text-accent text-xs font-semibold uppercase tracking-wider">Fase 2</span>
+                            <h3 class="text-xl font-bold text-white">Identificar as Lacunas</h3>
+                        </div>
+                    </div>
+                    <p class="text-textMuted leading-relaxed">Identificação das lacunas de competências dos colaboradores e elaboração de um plano de desenvolvimento personalizado para fechá-las.</p>
+                    <div class="mt-4 flex items-center gap-2 text-sm text-accent">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>3 etapas &middot; 4 a 6 meses</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FASE 1 -->
+    <section id="fase1" class="py-24 px-6 relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-accent font-semibold tracking-wider text-sm uppercase mb-4 block">Fase 1</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Mapear as Competências de todas as <br><span class="text-accent">unidades organizacionais</span></h2>
+                <p class="text-textMuted text-lg max-w-3xl mx-auto">A primeira fase consiste em identificar e descrever todas as competências necessárias para cada unidade, por meio de análise documental, oficinas presenciais e validação colaborativa.</p>
+            </div>
+
+            <!-- Timeline Etapas -->
+            <div class="timeline-line space-y-8 pl-4">
+                <!-- Etapa 1 -->
+                <div class="relative flex gap-6">
+                    <div class="flex-shrink-0 w-14 h-14 bg-accent rounded-full flex items-center justify-center z-10 shadow-[0_0_20px_rgba(5,217,166,0.3)]">
+                        <span class="text-darkBg font-extrabold text-lg">1</span>
+                    </div>
+                    <div class="bg-cardBg p-8 rounded-2xl border border-white/5 hover:border-accent/20 transition-all flex-1">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2">
+                            <h3 class="text-xl font-bold text-white">Reuniões de Planejamento</h3>
+                            <span class="inline-flex items-center gap-1.5 text-accent text-sm font-medium bg-accent/10 px-3 py-1 rounded-full">
+                                <i class="fa-regular fa-clock text-xs"></i> 15 dias
+                            </span>
+                        </div>
+                        <p class="text-textMuted leading-relaxed">Alinhamento e estabelecimento do cronograma detalhado do projeto entre as equipes.</p>
+                    </div>
+                </div>
+
+                <!-- Etapa 2 -->
+                <div class="relative flex gap-6">
+                    <div class="flex-shrink-0 w-14 h-14 bg-accent rounded-full flex items-center justify-center z-10 shadow-[0_0_20px_rgba(5,217,166,0.3)]">
+                        <span class="text-darkBg font-extrabold text-lg">2</span>
+                    </div>
+                    <div class="bg-cardBg p-8 rounded-2xl border border-white/5 hover:border-accent/20 transition-all flex-1">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2">
+                            <h3 class="text-xl font-bold text-white">Análise Documental</h3>
+                            <span class="inline-flex items-center gap-1.5 text-accent text-sm font-medium bg-accent/10 px-3 py-1 rounded-full">
+                                <i class="fa-regular fa-clock text-xs"></i> 1 a 2 meses
+                            </span>
+                        </div>
+                        <p class="text-textMuted leading-relaxed">Leitura e análise dos documentos com atribuições de cada unidade do órgão e proposição de competências utilizando a metodologia adotada.</p>
+                    </div>
+                </div>
+
+                <!-- Etapa 3 -->
+                <div class="relative flex gap-6">
+                    <div class="flex-shrink-0 w-14 h-14 bg-accent rounded-full flex items-center justify-center z-10 shadow-[0_0_20px_rgba(5,217,166,0.3)]">
+                        <span class="text-darkBg font-extrabold text-lg">3</span>
+                    </div>
+                    <div class="bg-cardBg p-8 rounded-2xl border border-white/5 hover:border-accent/20 transition-all flex-1">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2">
+                            <h3 class="text-xl font-bold text-white">Apresentação aos Gestores</h3>
+                            <span class="inline-flex items-center gap-1.5 text-accent text-sm font-medium bg-accent/10 px-3 py-1 rounded-full">
+                                <i class="fa-regular fa-clock text-xs"></i> 1 mês
+                            </span>
+                        </div>
+                        <p class="text-textMuted leading-relaxed">Palestra presencial aos gestores da instituição para apresentar o projeto e sensibilizá-los sobre o Mapeamento de Competências.</p>
+                    </div>
+                </div>
+
+                <!-- Etapa 4 -->
+                <div class="relative flex gap-6">
+                    <div class="flex-shrink-0 w-14 h-14 bg-accent rounded-full flex items-center justify-center z-10 shadow-[0_0_20px_rgba(5,217,166,0.3)]">
+                        <span class="text-darkBg font-extrabold text-lg">4</span>
+                    </div>
+                    <div class="bg-cardBg p-8 rounded-2xl border border-white/5 hover:border-accent/20 transition-all flex-1">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2">
+                            <h3 class="text-xl font-bold text-white">Oficinas de Mapeamento</h3>
+                            <span class="inline-flex items-center gap-1.5 text-accent text-sm font-medium bg-accent/10 px-3 py-1 rounded-full">
+                                <i class="fa-regular fa-clock text-xs"></i> 1 a 2 meses
+                            </span>
+                        </div>
+                        <p class="text-textMuted leading-relaxed mb-4">Oficinas presenciais e à distância com duas pessoas de cada unidade, que receberão treinamento prévio e validarão as competências propostas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categorização das Competências -->
+    <section class="py-20 px-6 bg-cardBg/50 border-y border-white/5">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-14">
+                <span class="text-accent font-semibold tracking-wider text-sm uppercase mb-4 block">Resultado da Fase 1</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Categorização das Competências Mapeadas</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-cardBg p-8 rounded-2xl border border-white/5 card-hover text-center">
+                    <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                        <i class="fa-solid fa-building text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Competências Organizacionais</h3>
+                    <p class="text-textMuted text-sm leading-relaxed">Competências voltadas ao funcionamento regular da organização, garantindo a execução das atividades básicas e essenciais.</p>
+                </div>
+                <div class="bg-cardBg p-8 rounded-2xl border border-white/5 card-hover text-center">
+                    <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                        <i class="fa-solid fa-user-tie text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Competências Gerenciais</h3>
+                    <p class="text-textMuted text-sm leading-relaxed">Competências relacionadas ao exercício da função de gestão na atualidade ou no futuro.</p>
+                </div>
+                <div class="bg-cardBg p-8 rounded-2xl border border-white/5 card-hover text-center">
+                    <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                        <i class="fa-solid fa-gears text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Competências Específicas (técnicas)</h3>
+                    <p class="text-textMuted text-sm leading-relaxed">Aquelas relacionadas às entregas desenvolvidas na unidade, diretamente ligadas à sua atividade-fim.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Atividades nas Oficinas -->
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-gradient-to-br from-cardBg to-cardBgLight/50 p-10 md:p-14 rounded-3xl border border-accent/15 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-48 h-48 bg-accent opacity-5 rounded-full blur-[60px]"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-accent/15 rounded-xl flex items-center justify-center">
+                            <i class="fa-solid fa-users-rectangle text-accent text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Atividades nas Oficinas de Mapeamento</h3>
+                    </div>
+                    <p class="text-textMuted mb-8 leading-relaxed">O material será trabalhado de forma colaborativa, com participação ativa das pessoas designadas para atuar na implantação do projeto.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 bg-darkBg/50 p-5 rounded-xl border border-white/5">
+                            <div class="flex-shrink-0 w-8 h-8 bg-accent/20 rounded-lg flex items-center justify-center mt-0.5">
+                                <i class="fa-solid fa-check text-accent text-sm"></i>
+                            </div>
+                            <p class="text-textLight">Avaliar as competências descritas durante a Etapa 4, podendo <strong class="text-white">alterar, incluir ou excluir</strong> conforme necessidade</p>
+                        </div>
+                        <div class="flex items-start gap-4 bg-darkBg/50 p-5 rounded-xl border border-white/5">
+                            <div class="flex-shrink-0 w-8 h-8 bg-accent/20 rounded-lg flex items-center justify-center mt-0.5">
+                                <i class="fa-solid fa-check text-accent text-sm"></i>
+                            </div>
+                            <p class="text-textLight">Atribuir <strong class="text-white">grau de maturidade</strong> a cada competência mapeada</p>
+                        </div>
+                        <div class="flex items-start gap-4 bg-darkBg/50 p-5 rounded-xl border border-white/5">
+                            <div class="flex-shrink-0 w-8 h-8 bg-accent/20 rounded-lg flex items-center justify-center mt-0.5">
+                                <i class="fa-solid fa-check text-accent text-sm"></i>
+                            </div>
+                            <p class="text-textLight">Vincular as competências específicas aos <strong class="text-white">objetivos estratégicos</strong> da organização</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FASE 2 -->
+    <section id="fase2" class="py-24 px-6 bg-cardBg border-y border-white/5 relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-accent font-semibold tracking-wider text-sm uppercase mb-4 block">Fase 2</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Identificar as lacunas de competências <br><span class="text-accent">dos colaboradores</span></h2>
+                <p class="text-textMuted text-lg max-w-3xl mx-auto">A segunda fase identifica as lacunas de competências dos colaboradores e traça um plano de desenvolvimento personalizado para fechá-las, por meio de treinamentos e outras ações.</p>
+            </div>
+
+            <!-- Timeline Etapas -->
+            <div class="timeline-line space-y-8 pl-4">
+                <!-- Etapa 5 -->
+                <div class="relative flex gap-6">
+                    <div class="flex-shrink-0 w-14 h-14 bg-accent rounded-full flex items-center justify-center z-10 shadow-[0_0_20px_rgba(5,217,166,0.3)]">
+                        <span class="text-darkBg font-extrabold text-lg">5</span>
+                    </div>
+                    <div class="bg-darkBg p-8 rounded-2xl border border-white/5 hover:border-accent/20 transition-all flex-1">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2">
+                            <h3 class="text-xl font-bold text-white">Preparação do Sistema</h3>
+                            <span class="inline-flex items-center gap-1.5 text-accent text-sm font-medium bg-accent/10 px-3 py-1 rounded-full">
+                                <i class="fa-regular fa-clock text-xs"></i> 1 mês
+                            </span>
+                        </div>
+                        <p class="text-textMuted leading-relaxed">Tabulação dos dados coletados no sistema, análise das descrições de competências e preparação para a avaliação de necessidade de capacitação.</p>
+                    </div>
+                </div>
+
+                <!-- Etapa 6 -->
+                <div class="relative flex gap-6">
+                    <div class="flex-shrink-0 w-14 h-14 bg-accent rounded-full flex items-center justify-center z-10 shadow-[0_0_20px_rgba(5,217,166,0.3)]">
+                        <span class="text-darkBg font-extrabold text-lg">6</span>
+                    </div>
+                    <div class="bg-darkBg p-8 rounded-2xl border border-white/5 hover:border-accent/20 transition-all flex-1">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2">
+                            <h3 class="text-xl font-bold text-white">Treinamento da Equipe do Órgão</h3>
+                            <span class="inline-flex items-center gap-1.5 text-accent text-sm font-medium bg-accent/10 px-3 py-1 rounded-full">
+                                <i class="fa-regular fa-clock text-xs"></i> 2 meses
+                            </span>
+                        </div>
+                        <p class="text-textMuted leading-relaxed">Capacitação da equipe de gestão do projeto do órgão na utilização do sistema de gerenciamento de competências.</p>
+                    </div>
+                </div>
+
+                <!-- Etapa 7 -->
+                <div class="relative flex gap-6">
+                    <div class="flex-shrink-0 w-14 h-14 bg-accent rounded-full flex items-center justify-center z-10 shadow-[0_0_20px_rgba(5,217,166,0.3)]">
+                        <span class="text-darkBg font-extrabold text-lg">7</span>
+                    </div>
+                    <div class="bg-darkBg p-8 rounded-2xl border border-white/5 hover:border-accent/20 transition-all flex-1">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2">
+                            <h3 class="text-xl font-bold text-white">Avaliação de Necessidade de Capacitação</h3>
+                            <span class="inline-flex items-center gap-1.5 text-accent text-sm font-medium bg-accent/10 px-3 py-1 rounded-full">
+                                <i class="fa-regular fa-clock text-xs"></i> 1 mês
+                            </span>
+                        </div>
+                        <p class="text-textMuted leading-relaxed">Identificação do grau de necessidade de capacitação de todos os colaboradores nas competências mapeadas, através de questionários individuais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Relatório Final -->
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-gradient-to-br from-accent/10 to-cardBg p-10 md:p-14 rounded-3xl border border-accent/20 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-64 h-64 bg-accent opacity-5 rounded-full blur-[80px]"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-accent/15 rounded-xl flex items-center justify-center">
+                            <i class="fa-solid fa-file-lines text-accent text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Relatório Final</h3>
+                    </div>
+                    <p class="text-textMuted leading-relaxed max-w-3xl">Ao final do projeto, é entregue um relatório final com os principais resultados e entregas. Dessa forma, a instituição passa a contar com um modelo estruturado para mapear, desenvolver e reter as competências necessárias para o alcance de seus objetivos estratégicos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entregas -->
+    <section id="entregas" class="py-20 px-6 bg-cardBg/50 border-y border-white/5">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-14">
+                <span class="text-accent font-semibold tracking-wider text-sm uppercase mb-4 block">O que você recebe</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Entregas do Projeto</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                <div class="bg-cardBg p-8 rounded-2xl border border-accent/20 card-hover text-center">
+                    <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                        <i class="fa-solid fa-graduation-cap text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Plano de Desenvolvimento de Pessoas</h3>
+                </div>
+                <div class="bg-cardBg p-8 rounded-2xl border border-accent/20 card-hover text-center">
+                    <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                        <i class="fa-solid fa-user-gear text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Plano de Desenvolvimento de Liderança</h3>
+                </div>
+                <div class="bg-cardBg p-8 rounded-2xl border border-accent/20 card-hover text-center">
+                    <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                        <i class="fa-solid fa-book text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Dicionário de Competências Organizacionais</h3>
+                </div>
+            </div>
+
+            <!-- Ao final do projeto -->
+            <div class="text-center mb-10">
+                <h3 class="text-2xl font-bold text-white mb-2">Ao final do projeto, o órgão terá implantado:</h3>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div class="flex items-start gap-4 bg-cardBg p-6 rounded-xl border border-white/5">
+                    <div class="flex-shrink-0 w-10 h-10 bg-accent/15 rounded-lg flex items-center justify-center">
+                        <i class="fa-solid fa-crosshairs text-accent"></i>
+                    </div>
+                    <p class="text-textLight text-sm leading-relaxed">Identificação precisa das competências necessárias para cada unidade</p>
+                </div>
+                <div class="flex items-start gap-4 bg-cardBg p-6 rounded-xl border border-white/5">
+                    <div class="flex-shrink-0 w-10 h-10 bg-accent/15 rounded-lg flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-chart text-accent"></i>
+                    </div>
+                    <p class="text-textLight text-sm leading-relaxed">Diagnóstico das lacunas de competências dos colaboradores</p>
+                </div>
+                <div class="flex items-start gap-4 bg-cardBg p-6 rounded-xl border border-white/5">
+                    <div class="flex-shrink-0 w-10 h-10 bg-accent/15 rounded-lg flex items-center justify-center">
+                        <i class="fa-solid fa-bullseye text-accent"></i>
+                    </div>
+                    <p class="text-textLight text-sm leading-relaxed">Direcionamento assertivo das ações de capacitação</p>
+                </div>
+                <div class="flex items-start gap-4 bg-cardBg p-6 rounded-xl border border-white/5">
+                    <div class="flex-shrink-0 w-10 h-10 bg-accent/15 rounded-lg flex items-center justify-center">
+                        <i class="fa-solid fa-link text-accent"></i>
+                    </div>
+                    <p class="text-textLight text-sm leading-relaxed">Alinhamento das competências aos objetivos estratégicos</p>
+                </div>
+                <div class="flex items-start gap-4 bg-cardBg p-6 rounded-xl border border-white/5 sm:col-span-2 lg:col-span-2">
+                    <div class="flex-shrink-0 w-10 h-10 bg-accent/15 rounded-lg flex items-center justify-center">
+                        <i class="fa-solid fa-gears text-accent"></i>
+                    </div>
+                    <p class="text-textLight text-sm leading-relaxed">Capacidade instalada para trabalhar nos subprocessos de gestão de pessoas, a gestão por competências</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-24 px-6 bg-gradient-to-b from-cardBg to-darkBg">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para iniciar a <span class="text-accent">transformação</span>?</h2>
+            <p class="text-textMuted text-lg mb-10 leading-relaxed">Entre em contato e agende um diagnóstico gratuito. Vamos juntos mapear o caminho para uma gestão de pessoas estratégica e orientada a resultados.</p>
+            <a href="https://wa.me/556199669546?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20como%20implantar%20a%20Gestão%20por%20Competências%20na%20minha%20organização."
+               target="_blank"
+               class="inline-block bg-accent hover:bg-accentHover text-darkBg text-lg font-bold py-5 px-10 rounded-full transition-all shadow-[0_0_30px_rgba(5,217,166,0.4)] hover:shadow-[0_0_40px_rgba(5,217,166,0.6)] transform hover:-translate-y-1">
+                <i class="fa-solid fa-calendar-check mr-2"></i> Agendar Diagnóstico Gratuito
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0b0c15] py-10 px-6 border-t border-white/10 text-center text-textMuted">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <a href="index.html" class="flex items-center gap-2">
+                <i class="fa-solid fa-chart-line text-accent"></i>
+                <span class="font-bold text-white">Lidere</span>
+            </a>
+            <p class="text-sm">&copy; 2026 Lidere Capital Estratégico. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/556199669546?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20mapeamento%20de%20competências%20organizacionais."
+       target="_blank"
+       rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-lg hover:bg-[#20bd5a] transition-colors wa-float"
+       aria-label="Falar no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mapeamento de competências organizacionais e gestão estratégica de pessoas. Implante um modelo estruturado de gestão por competências com diagnóstico, oficinas e plano de desenvolvimento.">
+    <meta name="keywords" content="gestão de competências, mapeamento de competências, capital humano estratégico, desenvolvimento organizacional, gestão estratégica de pessoas">
+    <title>Lidere - Mapeamento de Competências Organizacionais</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#131524',
+                        cardBg: '#1E2138',
+                        cardBgLight: '#2A2E4C',
+                        accent: '#05D9A6',
+                        accentHover: '#04B88C',
+                        textLight: '#E2E8F0',
+                        textMuted: '#A8B8CC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #131524;
+            color: #E2E8F0;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #ffffff, #05D9A6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .card-hover:hover {
+            border-color: #05D9A6;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(5, 217, 166, 0.2);
+        }
+
+        .wa-float {
+            animation: pulse-wa 2s infinite;
+        }
+        @keyframes pulse-wa {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-darkBg">
+
+    <!-- Header Fixo -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-darkBg/90 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 lg:px-20 py-4">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-cardBg rounded flex items-center justify-center border border-accent/30">
+                    <i class="fa-solid fa-chart-line text-accent text-xl"></i>
+                </div>
+                <span class="text-2xl font-bold tracking-tight text-white">Lidere<span class="text-accent text-3xl leading-none">↗</span></span>
+            </a>
+
+            <!-- Nav Desktop -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#metodologia" class="text-sm font-medium hover:text-accent transition-colors">Metodologia</a>
+                <a href="como-implantar.html" class="text-sm font-medium hover:text-accent transition-colors">Como Implantar</a>
+                <a href="#solucoes" class="text-sm font-medium hover:text-accent transition-colors">Soluções</a>
+                <a href="#especialista" class="text-sm font-medium hover:text-accent transition-colors">Especialista</a>
+                <a href="https://wa.me/556199669546?text=Olá!%20Gostaria%20de%20agendar%20um%20diagnóstico%20gratuito%20sobre%20mapeamento%20de%20competências%20organizacionais." target="_blank" class="bg-accent hover:bg-accentHover text-darkBg font-bold py-2 px-5 rounded-full text-sm transition-all">Contato</a>
+            </nav>
+
+            <!-- Hamburger Mobile -->
+            <button id="menuToggle" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Abrir menu">
+                <span class="block w-6 h-0.5 bg-white transition-all" id="bar1"></span>
+                <span class="block w-6 h-0.5 bg-white transition-all" id="bar2"></span>
+                <span class="block w-6 h-0.5 bg-white transition-all" id="bar3"></span>
+            </button>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobileMenu" class="hidden md:hidden bg-darkBg/95 backdrop-blur-md border-t border-white/5">
+            <nav class="flex flex-col px-6 py-4 gap-1">
+                <a href="#metodologia" class="mobile-link py-3 px-4 rounded-lg text-sm font-medium hover:bg-cardBg hover:text-accent transition-colors">Metodologia</a>
+                <a href="como-implantar.html" class="mobile-link py-3 px-4 rounded-lg text-sm font-medium hover:bg-cardBg hover:text-accent transition-colors">Como Implantar</a>
+                <a href="#solucoes" class="mobile-link py-3 px-4 rounded-lg text-sm font-medium hover:bg-cardBg hover:text-accent transition-colors">Soluções</a>
+                <a href="#especialista" class="mobile-link py-3 px-4 rounded-lg text-sm font-medium hover:bg-cardBg hover:text-accent transition-colors">Especialista</a>
+                <a href="https://wa.me/556199669546?text=Olá!%20Gostaria%20de%20agendar%20um%20diagnóstico%20gratuito%20sobre%20mapeamento%20de%20competências%20organizacionais." target="_blank" class="mt-2 bg-accent hover:bg-accentHover text-darkBg font-bold py-3 px-4 rounded-lg text-sm text-center transition-all">
+                    <i class="fa-brands fa-whatsapp mr-1"></i> Falar com Especialista
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative pt-28 pb-16 lg:pt-40 lg:pb-28 px-6 overflow-hidden">
+        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-accent opacity-10 rounded-full blur-[100px]"></div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div>
+                <span class="text-accent font-semibold tracking-wider text-sm uppercase mb-4 block">Gestão Estratégica de Pessoas</span>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
+                    Mapeamento de <span class="gradient-text">Competências Organizacionais</span>
+                </h1>
+                <p class="text-base md:text-lg text-textMuted mb-8 leading-relaxed">
+                    Implante um modelo estruturado de gestão por competências em 6 a 12 meses — com diagnóstico, oficinas de mapeamento e plano de desenvolvimento personalizado para sua organização.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 mb-10">
+                    <a href="https://wa.me/556199669546?text=Olá!%20Gostaria%20de%20agendar%20um%20diagnóstico%20gratuito%20sobre%20mapeamento%20de%20competências%20organizacionais." target="_blank" class="bg-accent hover:bg-accentHover text-darkBg font-bold py-4 px-7 rounded-full text-center transition-all shadow-[0_0_20px_rgba(5,217,166,0.3)] text-sm md:text-base">
+                        <i class="fa-solid fa-calendar-check mr-2"></i> Agendar Diagnóstico Gratuito
+                    </a>
+                    <a href="#metodologia" class="border border-white/20 hover:border-accent/40 text-white font-bold py-4 px-7 rounded-full text-center transition-all text-sm md:text-base">
+                        Conhecer a Metodologia
+                    </a>
+                </div>
+
+                <!-- Barra de credibilidade -->
+                <div class="border-t border-white/10 pt-6">
+                    <p class="text-xs text-textMuted uppercase tracking-wider mb-3">Experiência com</p>
+                    <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-white/70">
+                        <span>ENAP</span>
+                        <span>BRB</span>
+                        <span>Infraero</span>
+                        <span>DNIT</span>
+                        <span>Valec</span>
+                        <span>MPF</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative hidden lg:block">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Reunião estratégica de negócios" class="rounded-2xl shadow-2xl border border-white/10 opacity-90 object-cover h-[480px] w-full">
+                <div class="absolute -bottom-6 -left-6 bg-cardBg p-5 rounded-xl border border-white/10 shadow-xl flex items-center gap-4">
+                    <div class="bg-accent/20 p-3 rounded-full text-accent">
+                        <i class="fa-solid fa-users-gear text-2xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-white font-bold text-lg">+ Alta Performance</p>
+                        <p class="text-sm text-textMuted">Equipes alinhadas à estratégia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dores -->
+    <section class="py-16 md:py-20 bg-cardBg/50 px-6 border-y border-white/5">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">O desafio oculto que está <span class="text-red-400">travando seu crescimento</span></h2>
+            <p class="text-base md:text-lg text-textMuted mb-8 md:mb-12">Muitas organizações possuem excelentes profissionais, mas sofrem com a falta de direcionamento estruturado. Você reconhece algum destes cenários?</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 text-left">
+                <div class="bg-darkBg p-5 md:p-6 rounded-xl border border-white/5 flex gap-4">
+                    <i class="fa-solid fa-circle-xmark text-red-400 mt-1 flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">Talentos subutilizados</h4>
+                        <p class="text-sm text-textMuted">Pessoas com grande potencial ocupando funções que não extraem o seu melhor.</p>
+                    </div>
+                </div>
+                <div class="bg-darkBg p-5 md:p-6 rounded-xl border border-white/5 flex gap-4">
+                    <i class="fa-solid fa-circle-xmark text-red-400 mt-1 flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">Equipes desalinhadas</h4>
+                        <p class="text-sm text-textMuted">Ausência de clareza sobre as competências necessárias para atingir os objetivos da organização.</p>
+                    </div>
+                </div>
+                <div class="bg-darkBg p-5 md:p-6 rounded-xl border border-white/5 flex gap-4">
+                    <i class="fa-solid fa-circle-xmark text-red-400 mt-1 flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">Dificuldade com Lideranças</h4>
+                        <p class="text-sm text-textMuted">Promoções baseadas apenas em tempo de casa, sem desenvolvimento de habilidades de gestão.</p>
+                    </div>
+                </div>
+                <div class="bg-darkBg p-5 md:p-6 rounded-xl border border-white/5 flex gap-4">
+                    <i class="fa-solid fa-circle-xmark text-red-400 mt-1 flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-bold text-white mb-2">Baixa Produtividade</h4>
+                        <p class="text-sm text-textMuted">Esforço operacional alto sem reflexo proporcional nos resultados estratégicos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metodologia LIDERE -->
+    <section id="metodologia" class="py-16 md:py-24 px-6 bg-cardBg border-y border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <span class="text-accent font-semibold tracking-wider text-sm uppercase mb-4 block">Como atuamos</span>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Metodologia <span class="text-accent">LIDERE</span></h2>
+                <p class="text-textMuted text-base md:text-lg max-w-3xl mx-auto">Nossa metodologia exclusiva transforma desafios complexos em oportunidades de crescimento através de um processo estruturado e personalizado.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                <div class="relative bg-darkBg rounded-2xl p-6 md:p-8 card-hover overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-accent/30"></div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-12 h-12 bg-accent/15 rounded-xl flex items-center justify-center border border-accent/30">
+                            <span class="text-accent font-extrabold text-lg">01</span>
+                        </div>
+                        <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                            <i class="fa-solid fa-magnifying-glass-chart text-accent text-lg"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Diagnóstico</h3>
+                    <p class="text-sm text-textMuted leading-relaxed">Análise profunda da cultura organizacional, mapeamento de competências e identificação de gaps estratégicos.</p>
+                </div>
+
+                <div class="relative bg-darkBg rounded-2xl p-6 md:p-8 card-hover overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent/80 to-accent/20"></div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-12 h-12 bg-accent/15 rounded-xl flex items-center justify-center border border-accent/30">
+                            <span class="text-accent font-extrabold text-lg">02</span>
+                        </div>
+                        <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                            <i class="fa-solid fa-pen-ruler text-accent text-lg"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Desenho</h3>
+                    <p class="text-sm text-textMuted leading-relaxed">Criação de soluções customizadas alinhadas aos objetivos de negócio e particularidades da organização.</p>
+                </div>
+
+                <div class="relative bg-darkBg rounded-2xl p-6 md:p-8 card-hover overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent/60 to-accent/10"></div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-12 h-12 bg-accent/15 rounded-xl flex items-center justify-center border border-accent/30">
+                            <span class="text-accent font-extrabold text-lg">03</span>
+                        </div>
+                        <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                            <i class="fa-solid fa-rocket text-accent text-lg"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Execução</h3>
+                    <p class="text-sm text-textMuted leading-relaxed">Implementação estruturada com acompanhamento especializado e adaptação à realidade organizacional.</p>
+                </div>
+
+                <div class="relative bg-darkBg rounded-2xl p-6 md:p-8 card-hover overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent/40 to-accent/5"></div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-12 h-12 bg-accent/15 rounded-xl flex items-center justify-center border border-accent/30">
+                            <span class="text-accent font-extrabold text-lg">04</span>
+                        </div>
+                        <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                            <i class="fa-solid fa-chart-pie text-accent text-lg"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Medição</h3>
+                    <p class="text-sm text-textMuted leading-relaxed">Monitoramento contínuo com indicadores de performance, relatórios executivos e ajustes estratégicos.</p>
+                </div>
+            </div>
+
+            <!-- CTA intermediário -->
+            <div class="text-center mt-10 md:mt-14">
+                <a href="como-implantar.html" class="inline-flex items-center gap-2 border border-accent/40 hover:bg-accent/10 text-accent font-bold py-3 px-7 rounded-full transition-all text-sm">
+                    Veja o passo a passo completo da implantação <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nossas Soluções -->
+    <section id="solucoes" class="py-16 md:py-24 px-6 bg-cardBg/50 border-y border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <span class="text-accent font-semibold tracking-wider text-sm uppercase mb-4 block">O que oferecemos</span>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Nossas <span class="text-accent">Soluções</span></h2>
+                <p class="text-textMuted text-base md:text-lg max-w-2xl mx-auto">Soluções integradas que conectam estratégia organizacional ao desenvolvimento humano, gerando resultados mensuráveis.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <!-- Consultoria -->
+                <div class="bg-darkBg rounded-2xl p-6 md:p-8 border border-white/5 card-hover relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-accent/15 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-users-gear text-accent text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Consultoria em Gestão de Pessoas</h3>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accent text-xs"></i>
+                                <span class="text-textMuted text-sm">Diagnóstico organizacional</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accent text-xs"></i>
+                                <span class="text-textMuted text-sm">Desenvolvimento de liderança</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accent text-xs"></i>
+                                <span class="text-textMuted text-sm">Cultura e clima organizacional</span>
+                            </li>
+                        </ul>
+                        <div class="bg-accent/10 rounded-lg px-4 py-3 inline-flex items-center gap-2">
+                            <i class="fa-solid fa-chart-line text-accent text-sm"></i>
+                            <span class="text-accent font-bold text-sm">Gestão de Desempenho por Competências</span>
+                        </div>
+                        <p class="mt-3 text-xs text-textMuted">Impacto: Até <strong class="text-white">80% de aumento</strong> no engajamento</p>
+                    </div>
+                </div>
+
+                <!-- Treinamento -->
+                <div class="bg-darkBg rounded-2xl p-6 md:p-8 border border-white/5 card-hover relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-accent/15 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-chalkboard-user text-accent text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Treinamento & Mentoria Executiva</h3>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accent text-xs"></i>
+                                <span class="text-textMuted text-sm">Programas de desenvolvimento</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accent text-xs"></i>
+                                <span class="text-textMuted text-sm">Coaching para alta liderança</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accent text-xs"></i>
+                                <span class="text-textMuted text-sm">Capacitação em competências</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accent text-xs"></i>
+                                <span class="text-textMuted text-sm">Sucessão e retenção</span>
+                            </li>
+                        </ul>
+                        <div class="bg-accent/10 rounded-lg px-4 py-2 inline-block">
+                            <span class="text-accent font-bold text-sm">Impacto: <span class="text-white">85%</span> de aprovação em programas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seleção -->
+                <div class="bg-darkBg rounded-2xl p-6 md:p-8 border border-white/5 card-hover relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-accent/15 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-user-check text-accent text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Seleção por Competências</h3>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accent text-xs"></i>
+                                <span class="text-textMuted text-sm">Mapeamento de perfis</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accent text-xs"></i>
+                                <span class="text-textMuted text-sm">Processos seletivos estruturados</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accent text-xs"></i>
+                                <span class="text-textMuted text-sm">Assessment center</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accent text-xs"></i>
+                                <span class="text-textMuted text-sm">Integração estratégica</span>
+                            </li>
+                        </ul>
+                        <div class="bg-accent/10 rounded-lg px-4 py-2 inline-block">
+                            <span class="text-accent font-bold text-sm">Impacto: <span class="text-white">92%</span> de assertividade nas contratações</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Apoio à Educação -->
+                <div class="bg-darkBg rounded-2xl p-6 md:p-8 border border-white/5 card-hover relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-accent/15 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-graduation-cap text-accent text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Apoio à Educação</h3>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accent text-xs"></i>
+                                <span class="text-textMuted text-sm">Universidades corporativas</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accent text-xs"></i>
+                                <span class="text-textMuted text-sm">Programas acadêmicos</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accent text-xs"></i>
+                                <span class="text-textMuted text-sm">Metodologias ativas</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accent text-xs"></i>
+                                <span class="text-textMuted text-sm">Avaliação de aprendizagem</span>
+                            </li>
+                        </ul>
+                        <div class="bg-accent/10 rounded-lg px-4 py-2 inline-block">
+                            <span class="text-accent font-bold text-sm">Impacto: Redução de <span class="text-white">60%</span> no tempo de capacitação</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA intermediário -->
+            <div class="text-center mt-10 md:mt-14">
+                <a href="https://wa.me/556199669546?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20da%20Lidere." target="_blank" class="inline-flex items-center gap-2 bg-accent hover:bg-accentHover text-darkBg font-bold py-3 px-7 rounded-full transition-all text-sm shadow-[0_0_15px_rgba(5,217,166,0.2)]">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Falar com Especialista
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Por que investir -->
+    <section class="py-16 md:py-20 bg-accent/5 px-6 border-y border-accent/10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div class="md:w-1/2">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Por que investir na <br> Gestão por Competências?</h2>
+                <p class="text-base md:text-lg text-textMuted mb-6 md:mb-8">Ao aplicar nossa metodologia, os retornos são percebidos rapidamente em diversos níveis operacionais e estratégicos da organização.</p>
+                <a href="https://wa.me/556199669546?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20gestão%20por%20competências." target="_blank" class="inline-flex items-center gap-2 text-accent font-bold hover:text-white transition-colors">
+                    Falar com um consultor <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 w-full">
+                <div class="bg-cardBg p-5 md:p-6 rounded-xl border border-white/5 hover:border-accent/30 transition-all duration-300">
+                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-bullseye text-accent text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Alinhamento Estratégico</h3>
+                    <p class="text-textMuted text-sm leading-relaxed">Direciona os esforços de desenvolvimento para as reais necessidades da organização, de acordo com seus objetivos estratégicos.</p>
+                </div>
+                <div class="bg-cardBg p-5 md:p-6 rounded-xl border border-white/5 hover:border-accent/30 transition-all duration-300">
+                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-users-gear text-accent text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Desenvolvimento de Pessoas</h3>
+                    <p class="text-textMuted text-sm leading-relaxed">Torna mais transparente o processo de capacitação, transmitindo aos colaboradores as reais necessidades de desenvolvimento.</p>
+                </div>
+                <div class="bg-cardBg p-5 md:p-6 rounded-xl border border-white/5 hover:border-accent/30 transition-all duration-300">
+                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-user-check text-accent text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Seleção e Lotação</h3>
+                    <p class="text-textMuted text-sm leading-relaxed">Orienta processos seletivos, permite a criação de banco de talentos interno, e proporciona lotação de pessoas de forma mais eficiente.</p>
+                </div>
+                <div class="bg-cardBg p-5 md:p-6 rounded-xl border border-white/5 hover:border-accent/30 transition-all duration-300">
+                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-chart-line text-accent text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Avaliação de Desempenho</h3>
+                    <p class="text-textMuted text-sm leading-relaxed">Permite que a avaliação ocorra de forma mais justa e aderente aos avanços reais do desempenho e da evolução das pessoas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prova Social / Números -->
+    <section class="py-16 md:py-20 px-6 border-b border-white/5">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Números que <span class="text-accent">comprovam</span></h2>
+                <p class="text-textMuted text-base md:text-lg">Resultados construídos ao longo de mais de duas décadas de atuação em gestão de pessoas.</p>
+            </div>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                <div class="bg-cardBg p-6 md:p-8 rounded-2xl border border-white/5 text-center">
+                    <p class="text-3xl md:text-4xl font-extrabold text-accent mb-2">20+</p>
+                    <p class="text-sm text-textMuted">Anos de experiência em gestão de pessoas</p>
+                </div>
+                <div class="bg-cardBg p-6 md:p-8 rounded-2xl border border-white/5 text-center">
+                    <p class="text-3xl md:text-4xl font-extrabold text-accent mb-2">5M+</p>
+                    <p class="text-sm text-textMuted">Inscritos na plataforma EV.G</p>
+                </div>
+                <div class="bg-cardBg p-6 md:p-8 rounded-2xl border border-white/5 text-center">
+                    <p class="text-3xl md:text-4xl font-extrabold text-accent mb-2">6+</p>
+                    <p class="text-sm text-textMuted">Órgãos públicos de referência atendidos</p>
+                </div>
+                <div class="bg-cardBg p-6 md:p-8 rounded-2xl border border-white/5 text-center">
+                    <p class="text-3xl md:text-4xl font-extrabold text-accent mb-2">7</p>
+                    <p class="text-sm text-textMuted">Etapas estruturadas de implantação</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Especialista -->
+    <section id="especialista" class="py-16 md:py-24 px-6 bg-cardBg/50 border-b border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <span class="text-accent font-semibold tracking-wider text-sm uppercase mb-4 block">Quem está por trás</span>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Conheça a <span class="text-accent">Especialista</span></h2>
+                <p class="text-textMuted text-base md:text-lg max-w-2xl mx-auto">Mais de 20 anos transformando a gestão de pessoas em organizações públicas de referência no Brasil.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-10 items-start">
+                <!-- Foto -->
+                <div class="lg:col-span-2">
+                    <div class="relative max-w-sm mx-auto lg:max-w-none">
+                        <div class="absolute -inset-1 bg-gradient-to-br from-accent/30 to-transparent rounded-2xl blur-sm"></div>
+                        <img src="dani.avif" alt="Danyelle Barreto - Especialista em Gestão de Pessoas" class="relative rounded-2xl w-full object-cover shadow-2xl border border-white/10" style="max-height: 480px;">
+                    </div>
+                    <div class="mt-6 text-center lg:text-left">
+                        <h3 class="text-2xl font-extrabold text-white">Danyelle Barreto</h3>
+                        <p class="text-accent font-semibold mt-1">Psicóloga | Especialista em Gestão Pública</p>
+                        <p class="text-textMuted text-sm mt-1">Servidora de carreira da ENAP</p>
+                    </div>
+                </div>
+
+                <!-- Bio e Experiência -->
+                <div class="lg:col-span-3">
+                    <div class="bg-darkBg p-5 md:p-6 rounded-2xl border border-white/5 mb-6">
+                        <p class="text-textLight leading-relaxed mb-4">
+                            Possui <strong class="text-white">20 anos de experiência</strong> em análise de perfis com base em competências, atuando em parceria com órgãos públicos como <strong class="text-white">ENAP, BRB, Infraero, DNIT e Valec</strong>.
+                        </p>
+                        <p class="text-textLight leading-relaxed mb-4">
+                            É <strong class="text-white">recrutadora sênior</strong> em processos seletivos de grande porte e cargos executivos na Administração Pública, além de <strong class="text-white">docente</strong> em cursos de gestão do desempenho, gestão por competências, qualidade de vida no trabalho, liderança e mentoria executiva.
+                        </p>
+                        <p class="text-textLight leading-relaxed">
+                            Atua como responsável estratégica pelo desenvolvimento e oferta de cursos autoinstrucionais na <strong class="text-white">EV.G</strong>, maior plataforma de cursos para servidores públicos do Brasil, com mais de <strong class="text-accent">5 milhões de inscritos</strong>.
+                        </p>
+                    </div>
+
+                    <h4 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-briefcase text-accent"></i>
+                        Trajetória Profissional
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="bg-darkBg p-4 rounded-xl border border-white/5 flex gap-4 items-start card-hover">
+                            <div class="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0"></div>
+                            <div>
+                                <p class="font-bold text-white text-sm">Coordenadora-Geral de Cursos Assíncronos</p>
+                                <p class="text-textMuted text-xs">Escola Virtual de Governo (EV.G)</p>
+                                <span class="inline-block mt-1 text-xs font-semibold text-accent bg-accent/10 px-2 py-0.5 rounded-full">2023 - atual</span>
+                            </div>
+                        </div>
+                        <div class="bg-darkBg p-4 rounded-xl border border-white/5 flex gap-4 items-start card-hover">
+                            <div class="w-2 h-2 rounded-full bg-accent/60 mt-2 flex-shrink-0"></div>
+                            <div>
+                                <p class="font-bold text-white text-sm">Superintendente de Gestão de Pessoas</p>
+                                <p class="text-textMuted text-xs">Valec Engenharia e Ferrovias S/A</p>
+                                <span class="inline-block mt-1 text-xs text-textMuted">2020 / 2022</span>
+                            </div>
+                        </div>
+                        <div class="bg-darkBg p-4 rounded-xl border border-white/5 flex gap-4 items-start card-hover">
+                            <div class="w-2 h-2 rounded-full bg-accent/60 mt-2 flex-shrink-0"></div>
+                            <div>
+                                <p class="font-bold text-white text-sm">Coordenadora-Geral de Gestão de Pessoas</p>
+                                <p class="text-textMuted text-xs">DNIT</p>
+                                <span class="inline-block mt-1 text-xs text-textMuted">2019 / 2020</span>
+                            </div>
+                        </div>
+                        <div class="bg-darkBg p-4 rounded-xl border border-white/5 flex gap-4 items-start card-hover">
+                            <div class="w-2 h-2 rounded-full bg-accent/60 mt-2 flex-shrink-0"></div>
+                            <div>
+                                <p class="font-bold text-white text-sm">Chefe de Capacitação e Desenvolvimento</p>
+                                <p class="text-textMuted text-xs">Escola Nacional de Administração Pública (ENAP)</p>
+                                <span class="inline-block mt-1 text-xs text-textMuted">2009 / 2016</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section id="contato" class="py-16 md:py-24 px-6 bg-gradient-to-b from-cardBg to-darkBg">
+        <div class="max-w-5xl mx-auto relative">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl md:text-3xl lg:text-5xl font-extrabold mb-4 md:mb-6 text-white">Pronto para Transformar?</h2>
+                <p class="text-base md:text-lg text-textMuted max-w-2xl mx-auto">
+                    Agende seu diagnóstico gratuito e descubra como podemos impulsionar os resultados da sua organização
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-10 md:mb-14">
+                <div class="bg-cardBgLight/20 p-6 md:p-8 rounded-2xl border border-white/5 text-center card-hover">
+                    <div class="w-14 h-14 mx-auto bg-accent/15 rounded-xl flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-stethoscope text-accent text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-3">Diagnóstico em 30 Minutos</h4>
+                    <p class="text-sm text-textMuted leading-relaxed">Análise inicial gratuita dos principais desafios com recomendações estratégicas personalizadas.</p>
+                </div>
+                <div class="bg-cardBgLight/20 p-6 md:p-8 rounded-2xl border border-white/5 text-center card-hover">
+                    <div class="w-14 h-14 mx-auto bg-accent/15 rounded-xl flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-file-lines text-accent text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-3">Proposta Customizada</h4>
+                    <p class="text-sm text-textMuted leading-relaxed">Plano de ação detalhado com cronograma, investimento e métricas de sucesso.</p>
+                </div>
+                <div class="bg-cardBgLight/20 p-6 md:p-8 rounded-2xl border border-white/5 text-center card-hover">
+                    <div class="w-14 h-14 mx-auto bg-accent/15 rounded-xl flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-headset text-accent text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-3">Acompanhamento Contínuo</h4>
+                    <p class="text-sm text-textMuted leading-relaxed">Suporte especializado durante todo o processo com ajustes estratégicos quando necessário.</p>
+                </div>
+            </div>
+
+            <!-- CTA Box -->
+            <div class="text-center bg-cardBgLight/20 p-8 md:p-14 rounded-3xl border border-accent/20 shadow-2xl relative overflow-hidden">
+                <div class="absolute inset-0 bg-accent/5 blur-[80px] z-0"></div>
+                <div class="relative z-10">
+                    <p class="text-textMuted mb-6">Não deixe sua estratégia no papel. Comece hoje a transformar o potencial das pessoas na maior vantagem competitiva da sua organização.</p>
+                    <a href="https://wa.me/556199669546?text=Olá!%20Gostaria%20de%20agendar%20um%20diagnóstico%20gratuito%20sobre%20mapeamento%20de%20competências%20organizacionais."
+                       target="_blank"
+                       class="inline-block bg-accent hover:bg-accentHover text-darkBg text-base md:text-lg font-bold py-4 md:py-5 px-8 md:px-10 rounded-full transition-all shadow-[0_0_30px_rgba(5,217,166,0.4)] hover:shadow-[0_0_40px_rgba(5,217,166,0.6)] transform hover:-translate-y-1">
+                        <i class="fa-solid fa-calendar-check mr-2"></i> Agendar Diagnóstico Gratuito
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0b0c15] py-8 md:py-10 px-6 border-t border-white/10 text-center text-textMuted">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <a href="index.html" class="flex items-center gap-2">
+                <i class="fa-solid fa-chart-line text-accent"></i>
+                <span class="font-bold text-white">Lidere</span>
+            </a>
+            <p class="text-sm">&copy; 2026 Lidere Capital Estratégico. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/556199669546?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20mapeamento%20de%20competências%20organizacionais."
+       target="_blank"
+       rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center text-2xl md:text-3xl shadow-lg hover:bg-[#20bd5a] transition-colors wa-float"
+       aria-label="Falar no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Mobile Menu JS -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const bar1 = document.getElementById('bar1');
+        const bar2 = document.getElementById('bar2');
+        const bar3 = document.getElementById('bar3');
+        let menuOpen = false;
+
+        menuToggle.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('hidden');
+
+            if (menuOpen) {
+                bar1.style.transform = 'rotate(45deg) translate(4px, 4px)';
+                bar2.style.opacity = '0';
+                bar3.style.transform = 'rotate(-45deg) translate(4px, -4px)';
+            } else {
+                bar1.style.transform = '';
+                bar2.style.opacity = '1';
+                bar3.style.transform = '';
+            }
+        });
+
+        // Fecha menu ao clicar em link âncora
+        document.querySelectorAll('.mobile-link[href^="#"]').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileMenu.classList.add('hidden');
+                bar1.style.transform = '';
+                bar2.style.opacity = '1';
+                bar3.style.transform = '';
+            });
+        });
+    </script>
+
+</body>
+</html>
