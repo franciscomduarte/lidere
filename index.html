@@ -1,639 +1,108 @@
-<!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mapeamento de competências organizacionais e gestão estratégica de pessoas. Implante um modelo estruturado de gestão por competências com diagnóstico, oficinas e plano de desenvolvimento.">
-    <meta name="keywords" content="gestão de competências, mapeamento de competências, capital humano estratégico, desenvolvimento organizacional, gestão estratégica de pessoas">
-    <title>Lidere - Mapeamento de Competências Organizacionais</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        darkBg: '#131524',
-                        cardBg: '#1E2138',
-                        cardBgLight: '#2A2E4C',
-                        accent: '#05D9A6',
-                        accentHover: '#04B88C',
-                        textLight: '#E2E8F0',
-                        textMuted: '#A8B8CC'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #131524;
-            color: #E2E8F0;
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, #ffffff, #05D9A6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .card-hover {
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-        .card-hover:hover {
-            border-color: #05D9A6;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(5, 217, 166, 0.2);
-        }
-
-        .wa-float {
-            animation: pulse-wa 2s infinite;
-        }
-        @keyframes pulse-wa {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-    </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Lidere Capital Estratégico | Estratégia, Pessoas, Organizações e IA</title>
+<meta name="description" content="Consultoria estratégica em transformação organizacional, gestão por competências, dimensionamento da força de trabalho, liderança e inteligência artificial."/>
+<link rel="canonical" href="https://www.liderecapitalestrategico.com.br/"/>
+<meta name="theme-color" content="#0D1321"/>
+<link rel="icon" href="favicon.png" type="image/png"/>
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="pt_BR"/>
+<meta property="og:site_name" content="Lidere Capital Estratégico"/>
+<meta property="og:title" content="Lidere Capital Estratégico | Estratégia, Pessoas, Organizações e IA"/>
+<meta property="og:description" content="Consultoria estratégica em transformação organizacional, gestão por competências, dimensionamento da força de trabalho, liderança e inteligência artificial."/>
+<meta property="og:url" content="https://www.liderecapitalestrategico.com.br/"/>
+<meta property="og:image" content="https://www.liderecapitalestrategico.com.br/apple-touch-icon.png"/>
+<meta name="twitter:card" content="summary"/>
+<style>
+:root{--navy:#0D1321;--graphite:#1A2233;--gold:#B4985A;--ivory:#F7F5F0;--white:#FFFFFF;--ink:#EAE7E0;--muted:#B7BECA;--line:rgba(247,245,240,.12);--soft:rgba(255,255,255,.04);--soft-2:rgba(255,255,255,.07)}
+*{box-sizing:border-box} html{scroll-padding-top:116px} body{margin:0;font-family:"Noto Sans",Aptos,"Segoe UI",Arial,sans-serif;background:var(--navy);color:var(--ivory);line-height:1.55} a{color:inherit;text-decoration:none} button{font:inherit}
+a:focus-visible,button:focus-visible,.btn:focus-visible,.service:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:2px}
+.skip-link{position:absolute;left:16px;top:-60px;z-index:100;background:var(--ivory);color:var(--navy);padding:10px 16px;font-weight:700;font-size:.9rem;transition:top .2s}
+.skip-link:focus{top:12px}
+.container{width:min(1180px,calc(100% - 48px));margin:auto}
+.eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.section{padding:96px 0} .section-tight{padding:72px 0}
+.section-head{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:end;margin-bottom:44px}
+h1,h2,h3,p{margin-top:0} h1{font-size:clamp(3.1rem,7vw,6.8rem);line-height:.95;letter-spacing:-.055em;margin-bottom:28px;max-width:980px;color:var(--white)} h2{font-size:clamp(2rem,4vw,3.8rem);line-height:1.02;letter-spacing:-.035em;margin-bottom:0;color:var(--white)} h3{font-size:1.25rem;line-height:1.2;letter-spacing:-.01em} .lead{font-size:clamp(1.05rem,1.8vw,1.28rem);color:var(--muted);max-width:760px}
+.gold-line{width:72px;height:2px;background:var(--gold);margin:22px 0 30px}
+.btn{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(247,245,240,.4);padding:14px 20px;font-weight:700;font-size:.92rem;transition:.25s;background:transparent;cursor:pointer;color:var(--ivory)} .btn:hover{transform:translateY(-2px)} .btn-primary{background:var(--ivory);border-color:var(--ivory);color:var(--navy)} .btn-gold{border-color:var(--gold);background:var(--gold);color:var(--navy)} .btn-light{border-color:rgba(255,255,255,.35);color:#fff;background:transparent} .btn-outline-dark{border-color:rgba(13,19,33,.5);color:var(--navy);background:transparent}
+header{position:sticky;top:0;z-index:50;background:rgba(13,19,33,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(247,245,240,.08)} .nav{height:100px;display:flex;align-items:center;justify-content:space-between;gap:24px} .brand{display:flex;align-items:center;min-width:0} .brand img{display:block;height:78px;width:auto;max-width:320px;object-fit:contain;object-position:left center;filter:none} .menu{display:flex;gap:28px;align-items:center;font-size:.86rem;font-weight:700;color:var(--ivory)} .menu a{position:relative} .menu a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-7px;width:0;height:1px;background:var(--gold);transition:.2s} .menu a:not(.btn):hover::after,.menu a:not(.btn):focus-visible::after{width:100%} .menu a[aria-current="page"]{color:var(--gold)}
+.hero{min-height:780px;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#0D1321 0%,#111a2c 42%,#1A2233 100%)} .hero::after{content:"";position:absolute;right:-120px;top:110px;width:620px;height:620px;border:1px solid rgba(180,152,90,.24);transform:rotate(45deg)} .hero::before{content:"";position:absolute;right:180px;top:250px;width:280px;height:280px;border-top:7px solid rgba(180,152,90,.52);border-right:7px solid rgba(180,152,90,.52);transform:rotate(45deg)} .hero-content{position:relative;z-index:2;padding:70px 0 82px} .hero-meta{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:30px;color:rgba(255,255,255,.88)} .hero-meta span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800} .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.thesis{background:var(--ivory);color:var(--navy);position:relative;overflow:hidden} .thesis::after{content:"";position:absolute;right:-90px;bottom:-180px;width:440px;height:440px;border:1px solid rgba(13,19,33,.12);transform:rotate(45deg)} .thesis-grid{display:grid;grid-template-columns:.9fr 1.4fr;gap:84px;align-items:center} .thesis h2{color:var(--navy)} .thesis p{color:#50586a;font-size:1.1rem} .thesis-quote{font-size:clamp(1.9rem,3vw,3rem);line-height:1.12;letter-spacing:-.035em;color:var(--navy);margin:0}
+.services{background:var(--navy)} .services-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)} .service{min-height:300px;padding:30px 24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;transition:.25s;background:var(--soft)} .service:hover{background:var(--soft-2);transform:translateY(-4px);box-shadow:0 18px 35px rgba(0,0,0,.18)} .service .num{font-size:.78rem;color:var(--gold);font-weight:800;letter-spacing:.12em;margin-bottom:70px} .service h3{font-size:1.18rem;margin-bottom:14px;color:var(--white)} .service p{font-size:.9rem;color:var(--muted);margin-bottom:0} .service .arrow{margin-top:auto;padding-top:24px;font-size:1.25rem;color:var(--gold)}
+.ai{background:linear-gradient(135deg,#111a2c 0%, #162033 100%);color:#fff;position:relative;overflow:hidden} .ai::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(180,152,90,.075) 1px,transparent 1px),linear-gradient(90deg,rgba(180,152,90,.075) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to right,transparent,black 65%)} .ai-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;position:relative;z-index:1} .ai h2{color:#fff} .ai p{color:rgba(255,255,255,.72)} .ai-badge{display:inline-block;border:1px solid rgba(180,152,90,.65);color:#d6bd7e;padding:7px 10px;font-size:.72rem;font-weight:800;letter-spacing:.18em;margin-bottom:28px} .ai-pillrow{display:flex;gap:10px;flex-wrap:wrap;margin:28px 0} .pill{border:1px solid rgba(255,255,255,.18);padding:8px 11px;font-size:.8rem} .ai-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px} .ai-card{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);padding:24px;min-height:160px} .ai-card span{color:var(--gold);font-size:.72rem;font-weight:800;letter-spacing:.12em} .ai-card h3{margin-top:28px;margin-bottom:8px;color:var(--white)} .ai-card p{font-size:.88rem;margin:0}
+.method{background:var(--graphite)} .method-track{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;margin-top:54px} .method-track::before{content:"";position:absolute;top:20px;left:10%;right:10%;height:1px;background:rgba(247,245,240,.18)} .step{position:relative;padding:0 22px} .step-dot{width:40px;height:40px;border-radius:50%;background:var(--ivory);border:8px solid var(--graphite);outline:1px solid var(--gold);display:grid;place-items:center;color:var(--navy);font-size:.72rem;font-weight:800;margin-bottom:26px;position:relative;z-index:2} .step h3{font-size:1rem;text-transform:uppercase;letter-spacing:.05em;color:var(--white)} .step p{font-size:.88rem;color:var(--muted)}
+.packages{background:#101827} .package-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px} .package{background:rgba(255,255,255,.04);padding:26px;min-height:305px;border-top:3px solid rgba(247,245,240,.14)} .package.featured{background:var(--ivory);color:var(--navy);border-top-color:var(--gold)} .package .mini{font-size:.7rem;color:var(--gold);font-weight:800;letter-spacing:.16em} .package h3{margin-top:42px;font-size:1.15rem;color:inherit} .package p{font-size:.87rem;color:var(--muted)} .package.featured p{color:#566072}.package ul{margin:18px 0 0;padding-left:18px;color:var(--muted);font-size:.84rem}.package li{margin:0 0 8px}.package.featured ul{color:#566072}
+.experience{background:var(--navy)} .exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px} .exp-panel{border:1px solid var(--line);padding:34px;background:var(--soft)} .exp-panel h3{font-size:1.4rem;color:var(--white)} .metric{display:flex;align-items:flex-end;gap:10px;margin-top:32px} .metric strong{font-size:3.8rem;line-height:.85;letter-spacing:-.06em;color:var(--white)} .metric span{font-size:.83rem;color:var(--muted);max-width:150px} .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px} .tags span{background:rgba(255,255,255,.06);padding:7px 9px;font-size:.78rem;color:var(--ivory)}
+.insights{background:#0f1728} .insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px} .article{background:rgba(255,255,255,.04);border:1px solid var(--line);padding:26px;min-height:260px;display:flex;flex-direction:column} .article .cat{font-size:.7rem;color:var(--gold);font-weight:800;letter-spacing:.15em} .article h3{font-size:1.22rem;margin-top:45px;color:var(--white)} .article p{font-size:.87rem;color:var(--muted)} .article a{margin-top:auto;font-weight:800;font-size:.82rem;color:var(--ivory)}
+.cta{background:var(--ivory);color:var(--navy)} .cta-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:60px;align-items:center} .cta h2{color:var(--navy)} .cta p{color:#5f6778;max-width:660px;margin-top:20px} .cta-actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap}
+footer{background:#090e19;color:rgba(255,255,255,.72);padding:44px 0 24px} .footer-grid{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end} .footer-logo{height:72px;width:auto;max-width:300px;filter:none;opacity:1} .footer-links{display:flex;gap:20px;font-size:.8rem} .legal{margin-top:34px;border-top:1px solid rgba(255,255,255,.1);padding-top:18px;font-size:.75rem;color:rgba(255,255,255,.62)}
+.mobile-toggle{display:none;background:none;border:0;font-size:1.5rem;line-height:1;color:var(--ivory);cursor:pointer;padding:8px;min-width:44px;min-height:44px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.btn:hover,.service:hover,.ai-card:hover{transform:none}}
+@media(max-width:980px){.mobile-toggle{display:block}.menu{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;align-items:stretch;gap:0;background:var(--navy);border-bottom:1px solid var(--line);padding:6px 24px 22px;box-shadow:0 24px 40px rgba(0,0,0,.35)}.menu.is-open{display:flex}.menu a{padding:15px 2px;font-size:.95rem}.menu a:not(.btn){border-bottom:1px solid var(--line)}.menu a:not(.btn)::after{display:none}.menu a.btn{margin-top:14px;justify-content:center}.section-head,.thesis-grid,.ai-grid,.cta-grid,.exp-grid{grid-template-columns:1fr;gap:34px}.services-grid{grid-template-columns:repeat(2,1fr)}.package-grid{grid-template-columns:repeat(2,1fr)}.method-track{grid-template-columns:1fr 1fr;gap:36px}.method-track::before{display:none}.insights-grid{grid-template-columns:1fr}.cta-actions{justify-content:flex-start}}
+@media(max-width:620px){.container{width:min(100% - 28px,1180px)}.nav{height:88px}.brand img{height:56px;max-width:220px}.hero{min-height:auto}.hero::before,.hero::after{display:none}.hero-content{padding:64px 0} h1{font-size:3.2rem}.section{padding:68px 0}.services-grid,.package-grid,.method-track,.ai-cards{grid-template-columns:1fr}.service{min-height:230px}.service .num{margin-bottom:36px}.footer-grid{grid-template-columns:1fr}.footer-links{flex-wrap:wrap}}
+</style>
 </head>
-<body class="antialiased selection:bg-accent selection:text-darkBg">
-
-    <!-- Header Fixo -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-darkBg/90 backdrop-blur-md border-b border-white/5">
-        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 lg:px-20 py-4">
-            <a href="index.html" class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-cardBg rounded flex items-center justify-center border border-accent/30">
-                    <i class="fa-solid fa-chart-line text-accent text-xl"></i>
-                </div>
-                <span class="text-2xl font-bold tracking-tight text-white">Lidere<span class="text-accent text-3xl leading-none">↗</span></span>
-            </a>
-
-            <!-- Nav Desktop -->
-            <nav class="hidden md:flex items-center gap-8">
-                <a href="#metodologia" class="text-sm font-medium hover:text-accent transition-colors">Metodologia</a>
-                <a href="como-implantar.html" class="text-sm font-medium hover:text-accent transition-colors">Como Implantar</a>
-                <a href="#solucoes" class="text-sm font-medium hover:text-accent transition-colors">Soluções</a>
-                <a href="#especialista" class="text-sm font-medium hover:text-accent transition-colors">Especialista</a>
-                <a href="https://wa.me/556199669546?text=Olá!%20Gostaria%20de%20agendar%20um%20diagnóstico%20gratuito%20sobre%20mapeamento%20de%20competências%20organizacionais." target="_blank" class="bg-accent hover:bg-accentHover text-darkBg font-bold py-2 px-5 rounded-full text-sm transition-all">Contato</a>
-            </nav>
-
-            <!-- Hamburger Mobile -->
-            <button id="menuToggle" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Abrir menu">
-                <span class="block w-6 h-0.5 bg-white transition-all" id="bar1"></span>
-                <span class="block w-6 h-0.5 bg-white transition-all" id="bar2"></span>
-                <span class="block w-6 h-0.5 bg-white transition-all" id="bar3"></span>
-            </button>
-        </div>
-
-        <!-- Menu Mobile -->
-        <div id="mobileMenu" class="hidden md:hidden bg-darkBg/95 backdrop-blur-md border-t border-white/5">
-            <nav class="flex flex-col px-6 py-4 gap-1">
-                <a href="#metodologia" class="mobile-link py-3 px-4 rounded-lg text-sm font-medium hover:bg-cardBg hover:text-accent transition-colors">Metodologia</a>
-                <a href="como-implantar.html" class="mobile-link py-3 px-4 rounded-lg text-sm font-medium hover:bg-cardBg hover:text-accent transition-colors">Como Implantar</a>
-                <a href="#solucoes" class="mobile-link py-3 px-4 rounded-lg text-sm font-medium hover:bg-cardBg hover:text-accent transition-colors">Soluções</a>
-                <a href="#especialista" class="mobile-link py-3 px-4 rounded-lg text-sm font-medium hover:bg-cardBg hover:text-accent transition-colors">Especialista</a>
-                <a href="https://wa.me/556199669546?text=Olá!%20Gostaria%20de%20agendar%20um%20diagnóstico%20gratuito%20sobre%20mapeamento%20de%20competências%20organizacionais." target="_blank" class="mt-2 bg-accent hover:bg-accentHover text-darkBg font-bold py-3 px-4 rounded-lg text-sm text-center transition-all">
-                    <i class="fa-brands fa-whatsapp mr-1"></i> Falar com Especialista
-                </a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero -->
-    <section class="relative pt-28 pb-16 lg:pt-40 lg:pb-28 px-6 overflow-hidden">
-        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-accent opacity-10 rounded-full blur-[100px]"></div>
-
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-            <div>
-                <span class="text-accent font-semibold tracking-wider text-sm uppercase mb-4 block">Gestão Estratégica de Pessoas</span>
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
-                    Mapeamento de <span class="gradient-text">Competências Organizacionais</span>
-                </h1>
-                <p class="text-base md:text-lg text-textMuted mb-8 leading-relaxed">
-                    Implante um modelo estruturado de gestão por competências em 6 a 12 meses — com diagnóstico, oficinas de mapeamento e plano de desenvolvimento personalizado para sua organização.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-3 mb-10">
-                    <a href="https://wa.me/556199669546?text=Olá!%20Gostaria%20de%20agendar%20um%20diagnóstico%20gratuito%20sobre%20mapeamento%20de%20competências%20organizacionais." target="_blank" class="bg-accent hover:bg-accentHover text-darkBg font-bold py-4 px-7 rounded-full text-center transition-all shadow-[0_0_20px_rgba(5,217,166,0.3)] text-sm md:text-base">
-                        <i class="fa-solid fa-calendar-check mr-2"></i> Agendar Diagnóstico Gratuito
-                    </a>
-                    <a href="#metodologia" class="border border-white/20 hover:border-accent/40 text-white font-bold py-4 px-7 rounded-full text-center transition-all text-sm md:text-base">
-                        Conhecer a Metodologia
-                    </a>
-                </div>
-
-            </div>
-            <div class="relative hidden lg:block">
-                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Reunião estratégica de negócios" class="rounded-2xl shadow-2xl border border-white/10 opacity-90 object-cover h-[480px] w-full">
-                <div class="absolute -bottom-6 -left-6 bg-cardBg p-5 rounded-xl border border-white/10 shadow-xl flex items-center gap-4">
-                    <div class="bg-accent/20 p-3 rounded-full text-accent">
-                        <i class="fa-solid fa-users-gear text-2xl"></i>
-                    </div>
-                    <div>
-                        <p class="text-white font-bold text-lg">+ Alta Performance</p>
-                        <p class="text-sm text-textMuted">Equipes alinhadas à estratégia</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dores -->
-    <section class="py-16 md:py-20 bg-cardBg/50 px-6 border-y border-white/5">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">O desafio oculto que está <span class="text-red-400">travando seu crescimento</span></h2>
-            <p class="text-base md:text-lg text-textMuted mb-8 md:mb-12">Muitas organizações possuem excelentes profissionais, mas sofrem com a falta de direcionamento estruturado. Você reconhece algum destes cenários?</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 text-left">
-                <div class="bg-darkBg p-5 md:p-6 rounded-xl border border-white/5 flex gap-4">
-                    <i class="fa-solid fa-circle-xmark text-red-400 mt-1 flex-shrink-0"></i>
-                    <div>
-                        <h4 class="font-bold text-white mb-2">Talentos subutilizados</h4>
-                        <p class="text-sm text-textMuted">Pessoas com grande potencial ocupando funções que não extraem o seu melhor.</p>
-                    </div>
-                </div>
-                <div class="bg-darkBg p-5 md:p-6 rounded-xl border border-white/5 flex gap-4">
-                    <i class="fa-solid fa-circle-xmark text-red-400 mt-1 flex-shrink-0"></i>
-                    <div>
-                        <h4 class="font-bold text-white mb-2">Equipes desalinhadas</h4>
-                        <p class="text-sm text-textMuted">Ausência de clareza sobre as competências necessárias para atingir os objetivos da organização.</p>
-                    </div>
-                </div>
-                <div class="bg-darkBg p-5 md:p-6 rounded-xl border border-white/5 flex gap-4">
-                    <i class="fa-solid fa-circle-xmark text-red-400 mt-1 flex-shrink-0"></i>
-                    <div>
-                        <h4 class="font-bold text-white mb-2">Dificuldade com Lideranças</h4>
-                        <p class="text-sm text-textMuted">Promoções baseadas apenas em tempo de casa, sem desenvolvimento de habilidades de gestão.</p>
-                    </div>
-                </div>
-                <div class="bg-darkBg p-5 md:p-6 rounded-xl border border-white/5 flex gap-4">
-                    <i class="fa-solid fa-circle-xmark text-red-400 mt-1 flex-shrink-0"></i>
-                    <div>
-                        <h4 class="font-bold text-white mb-2">Baixa Produtividade</h4>
-                        <p class="text-sm text-textMuted">Esforço operacional alto sem reflexo proporcional nos resultados estratégicos.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Metodologia LIDERE -->
-    <section id="metodologia" class="py-16 md:py-24 px-6 bg-cardBg border-y border-white/5">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12 md:mb-16">
-                <span class="text-accent font-semibold tracking-wider text-sm uppercase mb-4 block">Como atuamos</span>
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Metodologia <span class="text-accent">LIDERE</span></h2>
-                <p class="text-textMuted text-base md:text-lg max-w-3xl mx-auto">Nossa metodologia exclusiva transforma desafios complexos em oportunidades de crescimento através de um processo estruturado e personalizado.</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                <div class="relative bg-darkBg rounded-2xl p-6 md:p-8 card-hover overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-accent/30"></div>
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-12 h-12 bg-accent/15 rounded-xl flex items-center justify-center border border-accent/30">
-                            <span class="text-accent font-extrabold text-lg">01</span>
-                        </div>
-                        <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
-                            <i class="fa-solid fa-magnifying-glass-chart text-accent text-lg"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Diagnóstico</h3>
-                    <p class="text-sm text-textMuted leading-relaxed">Análise profunda da cultura organizacional, mapeamento de competências e identificação de gaps estratégicos.</p>
-                </div>
-
-                <div class="relative bg-darkBg rounded-2xl p-6 md:p-8 card-hover overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent/80 to-accent/20"></div>
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-12 h-12 bg-accent/15 rounded-xl flex items-center justify-center border border-accent/30">
-                            <span class="text-accent font-extrabold text-lg">02</span>
-                        </div>
-                        <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
-                            <i class="fa-solid fa-pen-ruler text-accent text-lg"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Desenho</h3>
-                    <p class="text-sm text-textMuted leading-relaxed">Criação de soluções customizadas alinhadas aos objetivos de negócio e particularidades da organização.</p>
-                </div>
-
-                <div class="relative bg-darkBg rounded-2xl p-6 md:p-8 card-hover overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent/60 to-accent/10"></div>
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-12 h-12 bg-accent/15 rounded-xl flex items-center justify-center border border-accent/30">
-                            <span class="text-accent font-extrabold text-lg">03</span>
-                        </div>
-                        <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
-                            <i class="fa-solid fa-rocket text-accent text-lg"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Execução</h3>
-                    <p class="text-sm text-textMuted leading-relaxed">Implementação estruturada com acompanhamento especializado e adaptação à realidade organizacional.</p>
-                </div>
-
-                <div class="relative bg-darkBg rounded-2xl p-6 md:p-8 card-hover overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent/40 to-accent/5"></div>
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-12 h-12 bg-accent/15 rounded-xl flex items-center justify-center border border-accent/30">
-                            <span class="text-accent font-extrabold text-lg">04</span>
-                        </div>
-                        <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
-                            <i class="fa-solid fa-chart-pie text-accent text-lg"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Medição</h3>
-                    <p class="text-sm text-textMuted leading-relaxed">Monitoramento contínuo com indicadores de performance, relatórios executivos e ajustes estratégicos.</p>
-                </div>
-            </div>
-
-            <!-- CTA intermediário -->
-            <div class="text-center mt-10 md:mt-14">
-                <a href="como-implantar.html" class="inline-flex items-center gap-2 border border-accent/40 hover:bg-accent/10 text-accent font-bold py-3 px-7 rounded-full transition-all text-sm">
-                    Veja o passo a passo completo da implantação <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Nossas Soluções -->
-    <section id="solucoes" class="py-16 md:py-24 px-6 bg-cardBg/50 border-y border-white/5">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12 md:mb-16">
-                <span class="text-accent font-semibold tracking-wider text-sm uppercase mb-4 block">O que oferecemos</span>
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Nossas <span class="text-accent">Soluções</span></h2>
-                <p class="text-textMuted text-base md:text-lg max-w-2xl mx-auto">Soluções integradas que conectam estratégia organizacional ao desenvolvimento humano, gerando resultados mensuráveis.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                <!-- Consultoria -->
-                <div class="bg-darkBg rounded-2xl p-6 md:p-8 border border-white/5 card-hover relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full"></div>
-                    <div class="relative z-10">
-                        <div class="w-14 h-14 bg-accent/15 rounded-xl flex items-center justify-center mb-6">
-                            <i class="fa-solid fa-users-gear text-accent text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-4">Consultoria em Gestão de Pessoas</h3>
-                        <ul class="space-y-3 mb-6">
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-accent text-xs"></i>
-                                <span class="text-textMuted text-sm">Diagnóstico organizacional</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-accent text-xs"></i>
-                                <span class="text-textMuted text-sm">Desenvolvimento de liderança</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-accent text-xs"></i>
-                                <span class="text-textMuted text-sm">Cultura e clima organizacional</span>
-                            </li>
-                        </ul>
-                        <div class="bg-accent/10 rounded-lg px-4 py-3 inline-flex items-center gap-2">
-                            <i class="fa-solid fa-chart-line text-accent text-sm"></i>
-                            <span class="text-accent font-bold text-sm">Gestão de Desempenho por Competências</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Treinamento -->
-                <div class="bg-darkBg rounded-2xl p-6 md:p-8 border border-white/5 card-hover relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full"></div>
-                    <div class="relative z-10">
-                        <div class="w-14 h-14 bg-accent/15 rounded-xl flex items-center justify-center mb-6">
-                            <i class="fa-solid fa-chalkboard-user text-accent text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-4">Treinamento & Mentoria Executiva</h3>
-                        <ul class="space-y-3 mb-6">
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-accent text-xs"></i>
-                                <span class="text-textMuted text-sm">Programas de desenvolvimento</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-accent text-xs"></i>
-                                <span class="text-textMuted text-sm">Coaching para alta liderança</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-accent text-xs"></i>
-                                <span class="text-textMuted text-sm">Capacitação em competências</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-accent text-xs"></i>
-                                <span class="text-textMuted text-sm">Sucessão e retenção</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Seleção -->
-                <div class="bg-darkBg rounded-2xl p-6 md:p-8 border border-white/5 card-hover relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full"></div>
-                    <div class="relative z-10">
-                        <div class="w-14 h-14 bg-accent/15 rounded-xl flex items-center justify-center mb-6">
-                            <i class="fa-solid fa-user-check text-accent text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-4">Seleção por Competências</h3>
-                        <ul class="space-y-3 mb-6">
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-accent text-xs"></i>
-                                <span class="text-textMuted text-sm">Mapeamento de perfis</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-accent text-xs"></i>
-                                <span class="text-textMuted text-sm">Processos seletivos estruturados</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-accent text-xs"></i>
-                                <span class="text-textMuted text-sm">Assessment center</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-accent text-xs"></i>
-                                <span class="text-textMuted text-sm">Integração estratégica</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Apoio à Educação -->
-                <div class="bg-darkBg rounded-2xl p-6 md:p-8 border border-white/5 card-hover relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full"></div>
-                    <div class="relative z-10">
-                        <div class="w-14 h-14 bg-accent/15 rounded-xl flex items-center justify-center mb-6">
-                            <i class="fa-solid fa-graduation-cap text-accent text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-4">Apoio à Educação</h3>
-                        <ul class="space-y-3 mb-6">
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-accent text-xs"></i>
-                                <span class="text-textMuted text-sm">Universidades corporativas</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-accent text-xs"></i>
-                                <span class="text-textMuted text-sm">Programas acadêmicos</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-accent text-xs"></i>
-                                <span class="text-textMuted text-sm">Metodologias ativas</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-accent text-xs"></i>
-                                <span class="text-textMuted text-sm">Avaliação de aprendizagem</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA intermediário -->
-            <div class="text-center mt-10 md:mt-14">
-                <a href="https://wa.me/556199669546?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20da%20Lidere." target="_blank" class="inline-flex items-center gap-2 bg-accent hover:bg-accentHover text-darkBg font-bold py-3 px-7 rounded-full transition-all text-sm shadow-[0_0_15px_rgba(5,217,166,0.2)]">
-                    <i class="fa-brands fa-whatsapp text-lg"></i> Falar com Especialista
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Por que investir -->
-    <section class="py-16 md:py-20 bg-accent/5 px-6 border-y border-accent/10">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
-            <div class="md:w-1/2">
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Por que investir na <br> Gestão por Competências?</h2>
-                <p class="text-base md:text-lg text-textMuted mb-6 md:mb-8">Ao aplicar nossa metodologia, os retornos são percebidos rapidamente em diversos níveis operacionais e estratégicos da organização.</p>
-                <a href="https://wa.me/556199669546?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20gestão%20por%20competências." target="_blank" class="inline-flex items-center gap-2 text-accent font-bold hover:text-white transition-colors">
-                    Falar com um consultor <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </div>
-            <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 w-full">
-                <div class="bg-cardBg p-5 md:p-6 rounded-xl border border-white/5 hover:border-accent/30 transition-all duration-300">
-                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fa-solid fa-bullseye text-accent text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Alinhamento Estratégico</h3>
-                    <p class="text-textMuted text-sm leading-relaxed">Direciona os esforços de desenvolvimento para as reais necessidades da organização, de acordo com seus objetivos estratégicos.</p>
-                </div>
-                <div class="bg-cardBg p-5 md:p-6 rounded-xl border border-white/5 hover:border-accent/30 transition-all duration-300">
-                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fa-solid fa-users-gear text-accent text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Desenvolvimento de Pessoas</h3>
-                    <p class="text-textMuted text-sm leading-relaxed">Torna mais transparente o processo de capacitação, transmitindo aos colaboradores as reais necessidades de desenvolvimento.</p>
-                </div>
-                <div class="bg-cardBg p-5 md:p-6 rounded-xl border border-white/5 hover:border-accent/30 transition-all duration-300">
-                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fa-solid fa-user-check text-accent text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Seleção e Lotação</h3>
-                    <p class="text-textMuted text-sm leading-relaxed">Orienta processos seletivos, permite a criação de banco de talentos interno, e proporciona lotação de pessoas de forma mais eficiente.</p>
-                </div>
-                <div class="bg-cardBg p-5 md:p-6 rounded-xl border border-white/5 hover:border-accent/30 transition-all duration-300">
-                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fa-solid fa-chart-line text-accent text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Avaliação de Desempenho</h3>
-                    <p class="text-textMuted text-sm leading-relaxed">Permite que a avaliação ocorra de forma mais justa e aderente aos avanços reais do desempenho e da evolução das pessoas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Prova Social / Números -->
-    <section class="py-16 md:py-20 px-6 border-b border-white/5">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Números que <span class="text-accent">comprovam</span></h2>
-                <p class="text-textMuted text-base md:text-lg">Resultados construídos ao longo de mais de duas décadas de atuação em gestão de pessoas.</p>
-            </div>
-            <div class="grid grid-cols-2 gap-4 md:gap-6 max-w-2xl mx-auto">
-                <div class="bg-cardBg p-6 md:p-8 rounded-2xl border border-white/5 text-center">
-                    <p class="text-3xl md:text-4xl font-extrabold text-accent mb-2">20+</p>
-                    <p class="text-sm text-textMuted">Anos de experiência em gestão de pessoas</p>
-                </div>
-                <div class="bg-cardBg p-6 md:p-8 rounded-2xl border border-white/5 text-center">
-                    <p class="text-3xl md:text-4xl font-extrabold text-accent mb-2">6+</p>
-                    <p class="text-sm text-textMuted">Órgãos públicos de referência atendidos</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Especialista -->
-    <section id="especialista" class="py-16 md:py-24 px-6 bg-cardBg/50 border-b border-white/5">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12 md:mb-16">
-                <span class="text-accent font-semibold tracking-wider text-sm uppercase mb-4 block">Quem está por trás</span>
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Conheça a <span class="text-accent">Especialista</span></h2>
-                <p class="text-textMuted text-base md:text-lg max-w-2xl mx-auto">Mais de 20 anos transformando a gestão de pessoas em organizações públicas de referência no Brasil.</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-10 items-start">
-                <!-- Foto -->
-                <div class="lg:col-span-2">
-                    <div class="relative max-w-sm mx-auto lg:max-w-none">
-                        <div class="absolute -inset-1 bg-gradient-to-br from-accent/30 to-transparent rounded-2xl blur-sm"></div>
-                        <img src="dani.avif" alt="Danyelle Barreto - Especialista em Gestão de Pessoas" class="relative rounded-2xl w-full object-cover shadow-2xl border border-white/10" style="max-height: 480px;">
-                    </div>
-                    <div class="mt-6 text-center lg:text-left">
-                        <h3 class="text-2xl font-extrabold text-white">Danyelle Barreto</h3>
-                        <p class="text-accent font-semibold mt-1">Psicóloga | Especialista em Gestão Pública</p>
-                    </div>
-                </div>
-
-                <!-- Bio e Experiência -->
-                <div class="lg:col-span-3">
-                    <div class="bg-darkBg p-5 md:p-6 rounded-2xl border border-white/5">
-                        <p class="text-textLight leading-relaxed mb-4">
-                            Psicóloga e especialista em Gestão Pública, <strong class="text-white">Danyelle Barreto</strong> construiu uma trajetória de mais de <strong class="text-white">duas décadas</strong> dedicada ao desenvolvimento de lideranças e à transformação da gestão de pessoas em organizações de grande relevância institucional.
-                        </p>
-                        <p class="text-textLight leading-relaxed mb-4">
-                            Ao longo de sua carreira, atuou em posições estratégicas em instituições como <strong class="text-white">ENAP, Ministério Público Federal, DNIT, Valec, Serviço Geológico do Brasil e BRB</strong>, conduzindo projetos de formação de líderes, avaliação por competências e desenvolvimento organizacional.
-                        </p>
-                        <p class="text-textLight leading-relaxed">
-                            Atualmente exerce a função de <strong class="text-accent">Diretora Executiva da ENAP</strong>, contribuindo para o fortalecimento da liderança e da inovação na administração pública.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Final -->
-    <section id="contato" class="py-16 md:py-24 px-6 bg-gradient-to-b from-cardBg to-darkBg">
-        <div class="max-w-5xl mx-auto relative">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="text-2xl md:text-3xl lg:text-5xl font-extrabold mb-4 md:mb-6 text-white">Pronto para Transformar?</h2>
-                <p class="text-base md:text-lg text-textMuted max-w-2xl mx-auto">
-                    Agende seu diagnóstico gratuito e descubra como podemos impulsionar os resultados da sua organização
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-10 md:mb-14">
-                <div class="bg-cardBgLight/20 p-6 md:p-8 rounded-2xl border border-white/5 text-center card-hover">
-                    <div class="w-14 h-14 mx-auto bg-accent/15 rounded-xl flex items-center justify-center mb-5">
-                        <i class="fa-solid fa-stethoscope text-accent text-2xl"></i>
-                    </div>
-                    <h4 class="text-lg font-bold text-white mb-3">Diagnóstico em 30 Minutos</h4>
-                    <p class="text-sm text-textMuted leading-relaxed">Análise inicial gratuita dos principais desafios com recomendações estratégicas personalizadas.</p>
-                </div>
-                <div class="bg-cardBgLight/20 p-6 md:p-8 rounded-2xl border border-white/5 text-center card-hover">
-                    <div class="w-14 h-14 mx-auto bg-accent/15 rounded-xl flex items-center justify-center mb-5">
-                        <i class="fa-solid fa-file-lines text-accent text-2xl"></i>
-                    </div>
-                    <h4 class="text-lg font-bold text-white mb-3">Proposta Customizada</h4>
-                    <p class="text-sm text-textMuted leading-relaxed">Plano de ação detalhado com cronograma, investimento e métricas de sucesso.</p>
-                </div>
-                <div class="bg-cardBgLight/20 p-6 md:p-8 rounded-2xl border border-white/5 text-center card-hover">
-                    <div class="w-14 h-14 mx-auto bg-accent/15 rounded-xl flex items-center justify-center mb-5">
-                        <i class="fa-solid fa-headset text-accent text-2xl"></i>
-                    </div>
-                    <h4 class="text-lg font-bold text-white mb-3">Acompanhamento Contínuo</h4>
-                    <p class="text-sm text-textMuted leading-relaxed">Suporte especializado durante todo o processo com ajustes estratégicos quando necessário.</p>
-                </div>
-            </div>
-
-            <!-- CTA Box -->
-            <div class="text-center bg-cardBgLight/20 p-8 md:p-14 rounded-3xl border border-accent/20 shadow-2xl relative overflow-hidden">
-                <div class="absolute inset-0 bg-accent/5 blur-[80px] z-0"></div>
-                <div class="relative z-10">
-                    <p class="text-textMuted mb-6">Não deixe sua estratégia no papel. Comece hoje a transformar o potencial das pessoas na maior vantagem competitiva da sua organização.</p>
-                    <a href="https://wa.me/556199669546?text=Olá!%20Gostaria%20de%20agendar%20um%20diagnóstico%20gratuito%20sobre%20mapeamento%20de%20competências%20organizacionais."
-                       target="_blank"
-                       class="inline-block bg-accent hover:bg-accentHover text-darkBg text-base md:text-lg font-bold py-4 md:py-5 px-8 md:px-10 rounded-full transition-all shadow-[0_0_30px_rgba(5,217,166,0.4)] hover:shadow-[0_0_40px_rgba(5,217,166,0.6)] transform hover:-translate-y-1">
-                        <i class="fa-solid fa-calendar-check mr-2"></i> Agendar Diagnóstico Gratuito
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experiência Com -->
-    <section class="py-12 md:py-16 px-6 bg-[#0b0c15]/50 border-t border-white/5">
-        <div class="max-w-7xl mx-auto text-center">
-            <p class="text-xs text-textMuted uppercase tracking-wider mb-6">Experiência com</p>
-            <div class="grid grid-cols-3 md:grid-cols-6 gap-3 md:gap-6 max-w-4xl mx-auto">
-                <a href="https://www.enap.gov.br" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-3 md:p-4 flex items-center justify-center h-14 md:h-20 hover:shadow-[0_0_10px_rgba(5,217,166,0.3)] transition-shadow">
-                    <img src="enap.jpeg" alt="ENAP" class="h-8 md:h-14 w-auto object-contain">
-                </a>
-                <a href="https://www.brb.com.br" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-3 md:p-4 flex items-center justify-center h-14 md:h-20 hover:shadow-[0_0_10px_rgba(5,217,166,0.3)] transition-shadow">
-                    <img src="brb.jpeg" alt="BRB" class="h-8 md:h-14 w-auto object-contain">
-                </a>
-                <a href="https://www.gov.br/dnit" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-3 md:p-4 flex items-center justify-center h-14 md:h-20 hover:shadow-[0_0_10px_rgba(5,217,166,0.3)] transition-shadow">
-                    <img src="dnit.jpeg" alt="DNIT" class="h-8 md:h-14 w-auto object-contain">
-                </a>
-                <a href="https://www.valec.gov.br" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-3 md:p-4 flex items-center justify-center h-14 md:h-20 hover:shadow-[0_0_10px_rgba(5,217,166,0.3)] transition-shadow">
-                    <img src="valec.jpeg" alt="Valec" class="h-8 md:h-14 w-auto object-contain">
-                </a>
-                <a href="https://www.tcpe.tc.br" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-3 md:p-4 flex items-center justify-center h-14 md:h-20 hover:shadow-[0_0_10px_rgba(5,217,166,0.3)] transition-shadow">
-                    <img src="TCPE.png" alt="TCPE" class="h-8 md:h-14 w-auto object-contain">
-                </a>
-                <a href="https://www.mpf.mp.br" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-3 md:p-4 flex items-center justify-center h-14 md:h-20 hover:shadow-[0_0_10px_rgba(5,217,166,0.3)] transition-shadow">
-                    <img src="mpf.png" alt="MPF" class="h-8 md:h-14 w-auto object-contain">
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-[#0b0c15] py-8 md:py-10 px-6 border-t border-white/10 text-center text-textMuted">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <a href="index.html" class="flex items-center gap-2">
-                <i class="fa-solid fa-chart-line text-accent"></i>
-                <span class="font-bold text-white">Lidere</span>
-            </a>
-            <p class="text-sm">&copy; 2026 Lidere Capital Estratégico. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/556199669546?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20mapeamento%20de%20competências%20organizacionais."
-       target="_blank"
-       rel="noopener noreferrer"
-       class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center text-2xl md:text-3xl shadow-lg hover:bg-[#20bd5a] transition-colors wa-float"
-       aria-label="Falar no WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- Mobile Menu JS -->
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const bar1 = document.getElementById('bar1');
-        const bar2 = document.getElementById('bar2');
-        const bar3 = document.getElementById('bar3');
-        let menuOpen = false;
-
-        menuToggle.addEventListener('click', () => {
-            menuOpen = !menuOpen;
-            mobileMenu.classList.toggle('hidden');
-
-            if (menuOpen) {
-                bar1.style.transform = 'rotate(45deg) translate(4px, 4px)';
-                bar2.style.opacity = '0';
-                bar3.style.transform = 'rotate(-45deg) translate(4px, -4px)';
-            } else {
-                bar1.style.transform = '';
-                bar2.style.opacity = '1';
-                bar3.style.transform = '';
-            }
-        });
-
-        // Fecha menu ao clicar em link âncora
-        document.querySelectorAll('.mobile-link[href^="#"]').forEach(link => {
-            link.addEventListener('click', () => {
-                menuOpen = false;
-                mobileMenu.classList.add('hidden');
-                bar1.style.transform = '';
-                bar2.style.opacity = '1';
-                bar3.style.transform = '';
-            });
-        });
-    </script>
-
-</body>
-</html>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<header><div class="container nav"><a class="brand" href="#inicio"><img src="lidere-logo-dark.png" width="373" height="177" alt="Lidere Capital Estratégico"></a><nav class="menu" id="menu-principal" aria-label="Principal"><a href="#solucoes">Soluções</a><a href="#metodo">Método Lidere</a><a href="#ia">Lidere IA</a><a href="#insights">Insights</a><a href="#sobre">Sobre</a><a class="btn btn-primary" href="#contato">Converse com a Lidere</a></nav><button class="mobile-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">☰</button></div></header>
+<main id="conteudo">
+<section class="hero" id="inicio"><div class="container hero-content"><div class="hero-meta"><span>Estratégia</span><span aria-hidden="true">•</span><span>Pessoas</span><span aria-hidden="true">•</span><span>Organizações</span><span aria-hidden="true">•</span><span>IA</span></div><h1>Transformamos estratégia em capacidade organizacional.</h1><div class="gold-line"></div><p class="lead">A Lidere apoia organizações a desenvolver as pessoas, competências, capacidades e modelos de gestão necessários para transformar estratégia em resultados sustentáveis.</p><div class="hero-actions"><a class="btn btn-primary" href="#solucoes">Conheça nossas soluções <span aria-hidden="true">→</span></a><a class="btn" href="#contato">Converse com a Lidere</a></div></div></section>
+<section class="section thesis"><div class="container thesis-grid"><div><div class="eyebrow">Nossa missão</div><div class="gold-line"></div><p>Apoiar organizações públicas e privadas no desenvolvimento das capacidades, pessoas e soluções necessárias para transformar estratégia em resultados sustentáveis.</p></div><p class="thesis-quote">Conectar estratégia, pessoas, organizações e tecnologia para ampliar capacidade de execução e gerar valor duradouro.</p></div></section>
+<section class="section services" id="solucoes"><div class="container"><div class="section-head"><div><div class="eyebrow">O que oferecemos</div><h2>Soluções estratégicas para pessoas, organizações e transformação.</h2></div><p class="lead">A Lidere oferece serviços integrados em estratégia, gestão de pessoas, capacidades organizacionais e Inteligência Artificial, com atuação personalizada para cada contexto.</p></div><div class="services-grid">
+<a class="service" href="#contato"><span class="num">01</span><h3>Lidere Estratégia</h3><p>Diagnóstico organizacional, planejamento estratégico, cadeia de valor, governança, indicadores, plano de negócios e carta de serviços.</p><span class="arrow" aria-hidden="true">↗</span></a>
+<a class="service" href="#contato"><span class="num">02</span><h3>Lidere Pessoas</h3><p>Gestão estratégica de pessoas, mapeamento de competências, avaliação, desempenho, trilhas de aprendizagem e desenvolvimento de lideranças.</p><span class="arrow" aria-hidden="true">↗</span></a>
+<a class="service" href="#contato"><span class="num">03</span><h3>Lidere Organizações</h3><p>Capacidades organizacionais, dimensionamento da força de trabalho, análise capacidade × demanda, desenho de equipes e fortalecimento institucional.</p><span class="arrow" aria-hidden="true">↗</span></a>
+<a class="service" href="#ia"><span class="num">04</span><h3>Lidere IA</h3><p>Diagnóstico de prontidão, casos de uso e cursos de Inteligência Artificial para desenvolvedores, analistas e gestores.</p><span class="arrow" aria-hidden="true">↗</span></a>
+</div></div></section>
+<section class="section ai" id="ia"><div class="container ai-grid"><div><span class="ai-badge">LIDERE IA</span><h2>Inteligência Artificial aplicada às organizações.</h2><div class="gold-line"></div><p class="lead">Da estratégia à aplicação: avaliamos prontidão, identificamos oportunidades, desenvolvemos capacidades e estruturamos jornadas para adoção responsável de IA.</p><div class="ai-pillrow"><span class="pill">Desenvolvedores</span><span class="pill">Analistas</span><span class="pill">Gestores & Lideranças</span></div><a class="btn btn-gold" href="#contato">Conheça o Programa Lidere IA <span aria-hidden="true">→</span></a></div><div class="ai-cards">
+<div class="ai-card"><span>01</span><h3>Diagnóstico de Prontidão</h3><p>Estratégia, pessoas, competências, processos, dados, tecnologia e governança.</p></div>
+<div class="ai-card"><span>02</span><h3>Portfólio de Casos de Uso</h3><p>Priorização por valor, viabilidade, risco e capacidades necessárias.</p></div>
+<div class="ai-card"><span>03</span><h3>Lidere IA Academy</h3><p>Jornadas específicas para desenvolvedores, analistas, gestores e lideranças.</p></div>
+<div class="ai-card"><span>04</span><h3>Laboratório de Aplicação</h3><p>Problemas reais, protótipos, agentes e planos de implementação orientados ao contexto.</p></div>
+</div></div></section>
+<section class="section method" id="metodo"><div class="container"><div class="section-head"><div><div class="eyebrow">Método Lidere</div><h2>Cinco movimentos para sair do diagnóstico e chegar à sustentação.</h2></div><p class="lead">Método consultivo, sob medida e orientado a evidências para transformar soluções em capacidade institucional que permanece.</p></div><div class="method-track">
+<div class="step"><div class="step-dot">1</div><h3>Entender</h3><p>Contexto, estratégia, maturidade e desafios.</p></div>
+<div class="step"><div class="step-dot">2</div><h3>Diagnosticar</h3><p>Competências, lacunas, capacidades e prioridades.</p></div>
+<div class="step"><div class="step-dot">3</div><h3>Desenhar</h3><p>Modelos, matrizes, instrumentos, governança e plano.</p></div>
+<div class="step"><div class="step-dot">4</div><h3>Implementar</h3><p>Oficinas, entrevistas, protótipos, repasses e acompanhamento.</p></div>
+<div class="step"><div class="step-dot">5</div><h3>Sustentar</h3><p>Indicadores, rituais de gestão e evolução contínua.</p></div>
+</div></div></section>
+<section class="section packages"><div class="container"><div class="section-head"><div><div class="eyebrow">Serviços em destaque</div><h2>Conheça as principais frentes de atuação da Lidere.</h2></div><p class="lead">Os serviços podem ser contratados de forma independente ou combinados em projetos mais amplos, conforme a necessidade de cada organização.</p></div><div class="package-grid">
+<div class="package"><span class="mini">LIDERE</span><h3>Estratégia</h3><p>Para organizações que precisam alinhar direção, prioridades e execução.</p><ul><li>Diagnóstico e planejamento estratégico</li><li>Cadeia de valor e modelo de atuação</li><li>Indicadores, governança e desdobramento em ações</li><li>Plano de negócios e carta de serviços</li></ul></div>
+<div class="package"><span class="mini">LIDERE</span><h3>Pessoas</h3><p>Núcleo de soluções em gestão estratégica de pessoas e desenvolvimento humano.</p><ul><li><strong>Mapeamento de competências</strong> organizacionais, técnicas e gerenciais</li><li>Diagnóstico de lacunas e avaliação de competências</li><li>Gestão do desempenho, banco de talentos e PDIs</li><li>Trilhas, programas de aprendizagem e formação de líderes</li></ul></div>
+<div class="package"><span class="mini">LIDERE</span><h3>Organizações</h3><p>Para ampliar a capacidade institucional e a sustentabilidade da execução.</p><ul><li>Dimensionamento da força de trabalho</li><li>Gestão de capacidades organizacionais</li><li>Análise capacidade × demanda e gaps críticos</li><li>Cenários de alocação, desenho de equipes e estruturação institucional</li></ul></div>
+<div class="package featured"><span class="mini">LIDERE</span><h3>IA</h3><p>Frente de transformação digital orientada à adoção responsável e produtiva da Inteligência Artificial.</p><ul><li>Diagnóstico de prontidão e roadmap de adoção</li><li>Casos de uso e automação inteligente</li><li>Cursos para <strong>desenvolvedores, analistas e gestores</strong></li><li>Governança, riscos, ética e futuro do trabalho</li></ul></div>
+</div></div></section>
+<section class="section experience" id="sobre"><div class="container"><div class="section-head"><div><div class="eyebrow">Experiência aplicada</div><h2>Conhecimento técnico para desafios institucionais complexos.</h2></div><p class="lead">A Lidere atua com experiência técnica, método e soluções sob medida para organizações públicas e privadas.</p></div><div class="exp-grid"><div class="exp-panel"><div class="eyebrow">Liderança técnica</div><div class="metric"><strong>20+</strong><span>anos de experiência em liderança técnica</span></div><p style="margin-top:28px;color:#9aa2b1">Trajetória em gestão de pessoas, estratégia, competências, liderança e desenvolvimento organizacional.</p></div><div class="exp-panel"><div class="eyebrow">Temas de atuação</div><h3 style="margin-top:30px">Da estratégia à capacidade de execução.</h3><div class="tags"><span>Mapeamento de Competências</span><span>Gestão por Competências</span><span>Dimensionamento</span><span>Estratégia</span><span>Capacidades Organizacionais</span><span>Desenvolvimento</span><span>Liderança</span><span>Inteligência Artificial</span></div></div></div></div></section>
+<section class="section insights" id="insights"><div class="container"><div class="section-head"><div><div class="eyebrow">Insights</div><h2>Conhecimento para decisões melhores.</h2></div><p class="lead">Conteúdo técnico e executivo sobre estratégia, competências, liderança, organizações e Inteligência Artificial.</p></div><div class="insights-grid">
+<article class="article"><span class="cat">COMPETÊNCIAS</span><h3>Gestão por competências além do mapeamento</h3><p>Como transformar diagnóstico em decisões de desenvolvimento, mobilidade e capacidade institucional.</p><a href="#contato">Fale sobre este tema <span aria-hidden="true">→</span></a></article>
+<article class="article"><span class="cat">CAPACIDADES</span><h3>Como dimensionar capacidades organizacionais</h3><p>Uma visão integrada de entregas, demanda, força de trabalho e competências críticas.</p><a href="#contato">Fale sobre este tema <span aria-hidden="true">→</span></a></article>
+<article class="article"><span class="cat">INTELIGÊNCIA ARTIFICIAL</span><h3>O que muda na gestão com a IA</h3><p>Novas competências, desenho do trabalho, governança e preparação das lideranças.</p><a href="#contato">Fale sobre este tema <span aria-hidden="true">→</span></a></article>
+</div></div></section>
+<section class="section-tight cta" id="contato"><div class="container cta-grid"><div><div class="eyebrow">Vamos conversar</div><h2>Qual capacidade sua organização precisa desenvolver agora?</h2><p>Conte-nos o desafio. A Lidere estrutura uma solução sob medida, conectando estratégia, pessoas, capacidades e tecnologia.</p></div><div class="cta-actions"><a class="btn btn-gold" href="mailto:contato@liderecapitalestrategico.com.br">Solicite uma proposta</a><!-- TODO: trocar 5561000000000 pelo número real de WhatsApp (formato DDI+DDD+número) --><a class="btn btn-outline-dark" href="https://wa.me/5561000000000" target="_blank" rel="noopener">WhatsApp</a></div></div></section>
+</main>
+<footer><div class="container"><div class="footer-grid"><div><img class="footer-logo" src="lidere-logo-dark.png" width="373" height="177" alt="Lidere Capital Estratégico"><p style="font-size:.82rem;margin:14px 0 0">Estratégia que transforma. Resultados que permanecem.</p></div><nav class="footer-links" aria-label="Rodapé"><a href="#solucoes">Soluções</a><a href="#metodo">Método</a><a href="#ia">Lidere IA</a><a href="#insights">Insights</a><a href="#contato">Contato</a></nav></div><div class="legal">© 2026 Lidere Capital Estratégico. Todos os direitos reservados.</div></div></footer>
+<script>
+(function(){
+  var btn=document.querySelector('.mobile-toggle'),menu=document.getElementById('menu-principal');
+  if(!btn||!menu)return;
+  function setOpen(open){
+    menu.classList.toggle('is-open',open);
+    btn.setAttribute('aria-expanded',String(open));
+    btn.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');
+    btn.textContent=open?'✕':'☰';
+  }
+  btn.addEventListener('click',function(){setOpen(!menu.classList.contains('is-open'));});
+  menu.addEventListener('click',function(e){if(e.target.closest('a'))setOpen(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('is-open')){setOpen(false);btn.focus();}});
+  window.addEventListener('resize',function(){if(window.innerWidth>980)setOpen(false);});
+})();
+</script>
+</body></html>
